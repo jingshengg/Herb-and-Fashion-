@@ -16,6 +16,56 @@ if (menuButton && menu) {
 const year = document.getElementById('current-year');
 if (year) year.textContent = new Date().getFullYear();
 
+// Start all service-page counters together when the dashboard enters view.
+const serviceDashboard = document.querySelector('[data-service-counter-dashboard]');
+const serviceCounters = [...document.querySelectorAll('[data-count-up]')];
+if (serviceDashboard && serviceCounters.length) {
+  const targets = serviceCounters.map((counter) => Number(counter.dataset.countUp));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let hasStarted = false;
+
+  const showCount = (counter, value) => {
+    const nextValue = String(value);
+    if (counter.textContent === nextValue) return;
+    counter.textContent = nextValue;
+  };
+
+  serviceCounters.forEach((counter) => showCount(counter, 0));
+
+  const startServiceCounters = () => {
+    if (hasStarted) return;
+    hasStarted = true;
+    if (reduceMotion) {
+      serviceCounters.forEach((counter, index) => showCount(counter, targets[index]));
+      return;
+    }
+
+    const startTime = performance.now();
+    const duration = 2800;
+    const tick = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      serviceCounters.forEach((counter, index) => {
+        const value = progress === 1 ? targets[index] : Math.floor(targets[index] * progress);
+        showCount(counter, value);
+      });
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const dashboardObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        startServiceCounters();
+        dashboardObserver.disconnect();
+      }
+    }, { threshold: 0.2 });
+    dashboardObserver.observe(serviceDashboard);
+  } else {
+    startServiceCounters();
+  }
+}
+
 window.addEventListener('scroll', () => header?.classList.toggle('is-scrolled', window.scrollY > 12));
 
 // Transparent herb crops are optional. They appear only after a valid local image has loaded.
