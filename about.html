@@ -28,6 +28,11 @@
         <a href="services.html">Our Services</a>
         <a href="events.html">Events</a>
         <a href="index.html#contact">Contact Us</a>
+        <button class="language-toggle" type="button" aria-label="Switch language to Chinese" aria-pressed="false" data-language-toggle>
+          <span class="language-option language-option-en" aria-hidden="true">EN</span>
+          <span class="language-option language-option-zh" aria-hidden="true">中</span>
+          <span class="language-toggle-thumb" aria-hidden="true"></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -35,7 +40,7 @@
   <main>
     <header class="about-banner" aria-labelledby="about-page-title">
       <h1 class="sr-only" id="about-page-title">About Us</h1>
-      <img src="images/about us banner.png" alt="">
+      <img src="images/about us banner.png" data-banner-zh="images/about us chinese banner.png" alt="">
     </header>
 
     <section class="about-story" aria-label="Our company story">
@@ -45,7 +50,6 @@
             <img src="images/company%20logo.png" alt="Cao Ben, the Herb &amp; Fashion brand" class="story-logo">
           </figure>
           <div class="story-lead-copy">
-            <p class="story-kicker">A regional story, built on trusted traditions</p>
             <p class="story-paragraph story-paragraph-lead"><span class="company-name-highlight">Herbal <span class="plain-amp">&amp;</span> Fashion Sdn. Bhd.</span> is a dedicated distributor of premium health and wellness solutions, expanded from its parent company in Singapore. Founded in Singapore in 2005, the brand has built a trusted reputation in modern health supplementation and traditional herbal wisdom. To meet growing regional demand, the company officially expanded to Malaysia in 2011, establishing Herbal &amp; Fashion Sdn. Bhd. to bring high-quality health solutions to the local market.</p>
           </div>
         </div>
@@ -115,7 +119,7 @@
             </button>
             <div class="location-card" id="address-selangor" role="region" aria-label="Selangor office address">
               <button class="location-close" type="button" aria-label="Close address"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-              <p class="location-country">MALAYSIA</p><h3>Selangor</h3>
+              <p class="location-country">MALAYSIA · SELANGOR</p><h3>Cheras</h3>
               <p>169-1, Jalan Dataran Cheras 9, Dataran Perniagaan Cheras (Cheras Traders Square), 43200 Cheras, Selangor, Malaysia.</p>
             </div>
           </div>
@@ -157,11 +161,6 @@
     </section>
   </main>
 
-  <div class="about-bottom">
-    <div class="container about-bottom-inner">
-      <a class="back-to-top" href="#top"><i class=aria-hidden="true"></i></a>
-    </div>
-  </div>
   <footer class="site-footer">
     <div class="container footer-content">
       <a class="footer-wordmark" href="index.html">Herb <span class="plain-amp">&amp;</span> Fashion</a>
