@@ -252,13 +252,13 @@ document.addEventListener('keydown', (event) => {
   };
 
   const pageTitles = {
-    'index.html': '马来西亚“草本与时尚” | Herb & Fashion',
-    'about.html': '关于我们 | Herb & Fashion',
-    'products.html': '精选产品 | Herb & Fashion',
-    'services.html': '我们的服务 | Herb & Fashion',
-    'events.html': '活动 | Herb & Fashion',
-    'contact.html': '联系我们 | Herb & Fashion',
-    'product-detail.html': '产品信息 | Herb & Fashion'
+    'index.html': 'Herb and Fashion Malaysia Official Website',
+    'about.html': 'Herb and Fashion Malaysia Official Website',
+    'products.html': 'Herb and Fashion Malaysia Official Website',
+    'services.html': 'Herb and Fashion Malaysia Official Website',
+    'events.html': 'Herb and Fashion Malaysia Official Website',
+    'contact.html': 'Herb and Fashion Malaysia Official Website',
+    'product-detail.html': 'Herb and Fashion Malaysia Official Website'
   };
 
   const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim();
