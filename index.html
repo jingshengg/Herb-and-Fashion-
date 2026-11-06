@@ -11,13 +11,17 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/page-intro.css">
+  <link rel="stylesheet" href="css/category-gallery.css">
+  <link rel="stylesheet" href="css/category-gallery-waves.css">
+  <script src="js/page-intro.js"></script>
 </head>
 <body id="top">
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="Herb & Fashion overview">
         <img class="brand-logo" src="images/company logo.png" alt="Hengqing logo">
-        <span class="brand-name">Herb <span class="plain-amp">&amp;</span> Fashion</span>
+        <span class="brand-name">Herb <span class="plain-amp">&amp;</span> Fashion<span class="brand-chinese" lang="zh-Hans">草本时尚</span></span>
       </a>
       <button class="menu-button" type="button" aria-controls="site-menu" aria-expanded="false">
         <span></span><span></span><span></span><span class="sr-only">Open menu</span>
@@ -39,43 +43,76 @@
   </header>
 
   <main>
-    <!-- Overview hero: background photograph covers both the copy and the Get to Know Us area. -->
-    <section class="hero" id="overview" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-          <source src="images/video/company%20overview 3.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="hero-specimens" aria-hidden="true">
-        <!-- Add your transparent PNG crops later. The files load and drift automatically when they exist. -->
-        <span class="herb-object herb-ginseng"><img src="images/herbs/ginseng-cutout.pn" alt=""></span>
-        <span class="herb-object herb-astragalus"><img src="images/herbs/astragalus-cutout.pn" alt=""></span>
-        <span class="herb-object herb-angelica"><img src="images/herbs/chinese-angelica-root-cutout.pn" alt=""></span>
-        <span class="herb-object herb-goji"><img src="images/herbs/goji-berries-cutout.pn" alt=""></span>
-        <span class="herb-object herb-reishi"><img src="images/herbs/reishi-mushroom-cutout.pn" alt=""></span>
-      </div>
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <h1 id="hero-title">Herb <span class="plain-amp">&amp;</span> Fashion <em>Malaysia</em></h1>
-          <p class="hero-intro">Empowered by natural botanicals, ancient Eastern culture reclaims its place on the modern stage—radiating timeless style once again.</p>
-          <a class="button button-primary" href="about.html">Get to Know Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          <p class=""><span></span></p>
+    <!-- Scroll-scrubbed landscape hero: the title rises behind the ridgeline. -->
+    <section class="hero-scroll-section" id="overview" data-hero-scroll aria-label="Overview introduction">
+      <div class="hero hero-scene" data-hero-scene aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img class="hero-landscape" src="images/golden-sunset-over-rolling-tea-hills.png" alt="">
+          <div class="hero-mist" aria-hidden="true">
+            <span class="hero-mist__bank hero-mist__bank--far"></span>
+            <span class="hero-mist__bank hero-mist__bank--middle"></span>
+            <span class="hero-mist__bank hero-mist__bank--low"></span>
+          </div>
+        </div>
+        <h1 class="hero-title" id="hero-title" data-hero-title>Herb &amp; Fashion Malaysia</h1>
+        <svg class="hero-cutout hero-midground" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="hero-midground-mask" clipPathUnits="userSpaceOnUse">
+              <path d="M0 485 C72 475 132 460 190 465 C250 468 305 482 366 489 C428 495 487 483 540 478 C598 471 655 486 713 482 C772 478 831 461 889 456 C952 451 1018 447 1081 441 C1145 435 1208 421 1268 402 C1312 388 1343 366 1364 364 C1392 362 1410 387 1434 393 C1465 399 1499 405 1536 414 L1536 1024 L0 1024 Z" />
+            </clipPath>
+          </defs>
+          <image href="images/golden-sunset-over-rolling-tea-hills.png" x="0" y="0" width="1536" height="1024" preserveAspectRatio="none" clip-path="url(#hero-midground-mask)" />
+        </svg>
+        <svg class="hero-cutout hero-foreground" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <clipPath id="hero-foreground-mask" clipPathUnits="userSpaceOnUse">
+              <path d="M0 739 C171 728 312 716 451 700 C590 693 725 672 858 645 C1005 614 1156 574 1295 540 C1385 520 1463 505 1536 492 L1536 1024 L0 1024 Z" />
+            </clipPath>
+          </defs>
+          <image href="images/golden-sunset-over-rolling-tea-hills.png" x="0" y="0" width="1536" height="1024" preserveAspectRatio="none" clip-path="url(#hero-foreground-mask)" />
+        </svg>
+        <div class="hero-caption" data-hero-caption aria-hidden="true" inert>
+          <p class="hero-tagline">Empowered by natural botanicals, ancient Eastern culture reclaims its place on the modern stage, radiating timeless style once again.</p>
+          <a class="button hero-caption-cta" href="about.html">Get to Know Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- A concise entry grid, not a duplicate of the full Products page. -->
+    <div class="products-services-blend">
+
+    <!-- Interactive 3D category rail; card structure and carousel behavior remain unchanged. -->
     <section class="section products-preview" aria-labelledby="products-title">
+      <div class="products-preview__waves" data-products-waves aria-hidden="true">
+        <svg class="products-preview__wave-art" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
+          <g class="products-preview__wave-flow">
+            <path class="products-preview__wave-line products-preview__wave-line--main" d="M-80 120 C40 36 150 36 270 120 S500 204 620 120 S850 36 970 120 S1200 204 1320 120 S1540 36 1680 120" />
+            <path class="products-preview__wave-line products-preview__wave-line--echo" d="M-80 290 C55 205 160 208 285 290 S510 374 640 290 S865 208 990 290 S1215 374 1340 290 S1555 208 1680 290" />
+            <path class="products-preview__wave-line products-preview__wave-line--main" d="M-80 475 C35 390 165 388 285 475 S515 560 645 475 S875 390 1000 475 S1225 560 1350 475 S1560 390 1680 475" />
+            <path class="products-preview__wave-line products-preview__wave-line--echo" d="M-80 650 C45 568 170 565 295 650 S525 735 650 650 S885 565 1010 650 S1235 735 1360 650 S1570 565 1680 650" />
+            <path class="products-preview__wave-line products-preview__wave-line--fine" d="M-80 815 C45 735 170 730 295 815 S525 895 650 815 S885 730 1010 815 S1235 895 1360 815 S1570 730 1680 815" />
+          </g>
+        </svg>
+      </div>
       <div class="container">
         <div class="section-intro split-heading">
           <div><h2 id="products-title">Featured Products</h2></div>
           <p>Combining scientific formulations with trustworthy herbal ingredients, our products deliver high-quality manufacturing that strictly meets regulatory requirements for your peace of mind.</p>
         </div>
-        <div class="category-grid">
-          <a class="category-card" href="products.html#heart-circulation"><img src="images/Heart & Circulation pic.jpg" alt="Traditional Chinese herbal ingredients"><span class="card-line"></span><span class="category-content"><span class="category-index">01</span><span class="category-title">Heart <span class="plain-amp">&amp;</span> Circulation</span><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span></a>
-          <a class="category-card" href="products.html#bones-joints"><img src="images/Bones & Joints pic.png" alt="Wellness products for bones and joints"><span class="card-line"></span><span class="category-content"><span class="category-index">02</span><span class="category-title">Bones <span class="plain-amp">&amp;</span> Joints</span><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span></a>
-          <a class="category-card" href="products.html#sleep-stress"><img src="images/Sleep & Stress pic.png" alt="Wellness products for sleep and stress"><span class="card-line"></span><span class="category-content"><span class="category-index">03</span><span class="category-title">Sleep <span class="plain-amp">&amp;</span> Stress</span><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span></a>
-          <a class="category-card" href="products.html#daily-vitality"><img src="images/Daily Vitality pic.jpg" alt="Herbal products for daily vitality"><span class="card-line"></span><span class="category-content"><span class="category-index">04</span><span class="category-title">Daily Vitality</span><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span></a>
+        <div class="category-gallery" data-category-gallery role="region" aria-label="Product categories" aria-roledescription="carousel">
+          <button class="category-gallery__arrow category-gallery__arrow--previous" type="button" data-gallery-previous aria-label="Previous category"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+          <div class="category-gallery__viewport">
+            <div class="category-gallery__stage" data-category-gallery-stage role="group" aria-label="Product category cards" tabindex="0">
+              <button class="category-card" type="button" data-category-card data-index="0" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="1" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="2" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="3" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="4" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="5" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="6" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+              <button class="category-card" type="button" data-category-card data-index="7" aria-pressed="false"><span class="category-card__media" aria-hidden="true"></span><span class="category-card__content" aria-hidden="true"><span class="category-card__title"></span></span></button>
+            </div>
+          </div>
+          <button class="category-gallery__arrow category-gallery__arrow--next" type="button" data-gallery-next aria-label="Next category"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
         </div>
       </div>
     </section>
@@ -83,27 +120,18 @@
     <!-- Services preview: four specific service headings link onward to the full Services page. -->
     <section class="section services-preview" id="services" aria-labelledby="services-title">
       <div class="container services-layout">
-        <div class="services-copy"><p class="eyebrow">OUR SERVICES</p><h2 id="services-title">From botanical concept to global market.</h2><a class="button button-primary services-learn-more" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
-        <div class="service-list">
-          <article class="service-item" tabindex="0">
-            <span class="service-mark mark-formula"><svg class="service-sticker flask-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="flask-outline" d="M25 7h14M28 7v17L15 46a8 8 0 0 0 7 12h20a8 8 0 0 0 7-12L36 24V7"/><path class="flask-liquid" d="M23 43h18l5 8a3 3 0 0 1-3 4H21a3 3 0 0 1-3-4z"/><path class="flask-wave" d="M22 45c4-3 7 3 11 0s7 2 10 0"/></svg></span>
-            <div><h3>End-to-End OEM <span class="plain-amp">&amp;</span> ODM Production</h3></div>
-          </article>
-          <article class="service-item" tabindex="0">
-            <span class="service-mark mark-certification"><svg class="service-sticker certificate-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="certificate-paper" d="M15 8h28l8 8v38H15zM43 8v9h8"/><path class="certificate-line" d="M22 25h21M22 32h16M22 39h10"/><path class="certificate-seal" d="M25 48l4 2 4-2 3 3 1-5-5-3-5 2z"/><g class="certificate-pen"><path d="M42 45l11-11 4 4-11 11-5 1z"/><path class="pen-tip" d="M41 50l-1 4 5-2"/></g><path class="writing-trace" d="M22 45h13"/></svg></span>
-            <div><h3>Singapore Certifications <span class="plain-amp">&amp;</span> Declarations</h3></div>
-          </article>
-          <article class="service-item" tabindex="0">
-            <span class="service-mark mark-logistics"><svg class="service-sticker route-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="route-path" d="M17 18c12 0 18 8 18 15s-5 13-13 13h-3M47 46c-10 0-15-6-15-13s5-13 13-13h2"/><g class="route-pin route-pin-start"><path d="M17 9a9 9 0 0 0-9 9c0 7 9 15 9 15s9-8 9-15a9 9 0 0 0-9-9z"/><circle cx="17" cy="18" r="3"/></g><g class="route-pin route-pin-end"><path d="M47 31a9 9 0 0 0-9 9c0 7 9 15 9 15s9-8 9-15a9 9 0 0 0-9-9z"/><circle cx="47" cy="40" r="3"/></g></svg></span>
-            <div><h3>Compliant Export <span class="plain-amp">&amp;</span> Global Logistics</h3></div>
-          </article>
-          <article class="service-item" tabindex="0">
-            <span class="service-mark mark-partnership"><svg class="service-sticker handshake-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="handshake-arm handshake-arm-left" d="M6 24l10-9 12 1 8 7-7 8-6-4-8 8z"/><path class="handshake-arm handshake-arm-right" d="M58 24l-10-9-12 1-8 7 7 8 6-4 8 8z"/><path class="handshake-clasp" d="M23 27l5-5a5 5 0 0 1 7 0l3 3 3-2 8 9-9 10a5 5 0 0 1-7 0l-9-8a5 5 0 0 1-1-7z"/><path class="handshake-detail" d="M28 30l7 6M33 27l8 7M38 27l7 6"/></svg></span>
-            <div><h3>Regulatory Compliance <span class="plain-amp">&amp;</span> Assurance</h3></div>
-          </article>
+        <div class="services-copy"><h2 id="services-title">Our Services</h2></div>
+        <div class="service-list" data-service-list>
+          <div class="service-timeline-rail" aria-hidden="true"><span class="service-timeline-fill" data-service-timeline-fill></span></div>
+          <article class="service-item service-item--left" data-service-point><span class="service-mark"><svg class="service-sticker flask-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="flask-outline" d="M25 7h14M28 7v17L15 46a8 8 0 0 0 7 12h20a8 8 0 0 0 7-12L36 24V7"/><path class="flask-liquid" d="M23 43h18l5 8a3 3 0 0 1-3 4H21a3 3 0 0 1-3-4z"/><path class="flask-wave" d="M22 45c4-3 7 3 11 0s7 2 10 0"/></svg></span><div><h3>Singapore-Origin R&amp;D <span class="plain-amp">&amp;</span> Production</h3></div></article>
+          <article class="service-item service-item--right" data-service-point><span class="service-mark"><img class="service-sticker reference-sticker certificate-sticker" src="images/service-assets/gmp-check-seal.png" alt=""></span><div><h3>Strict GMP Manufacturing Standards</h3></div></article>
+          <article class="service-item service-item--left" data-service-point><span class="service-mark"><svg class="service-sticker regulatory-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="regulatory-shield" d="M32 7 51 14v14c0 13-8 22-19 29-11-7-19-16-19-29V14z"/><path class="regulatory-check" d="m23 32 6 6 13-14"/><path class="regulatory-spark" d="M48 10v-5M54 16h5"/></svg></span><div><h3>MAL Certification <span class="plain-amp">&amp;</span> Compliance</h3></div></article>
+          <article class="service-item service-item--right" data-service-point><span class="service-mark"><svg class="service-sticker marketing-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="marketing-megaphone" d="M10 27h12l25-12v34L22 38H10zM22 38l5 17h9l-6-14"/><path class="marketing-handle" d="M13 27v11"/><path class="marketing-wave" d="M52 23c5 4 5 12 0 16M56 17c9 7 9 21 0 28"/><circle class="marketing-dot" cx="20" cy="32" r="2"/></svg></span><div><h3>Dynamic Branding <span class="plain-amp">&amp;</span> Marketing</h3></div></article>
         </div>
+        <div class="services-cta" data-services-cta><a class="button button-primary services-learn-more" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
       </div>
     </section>
+    </div>
 
     <!-- Contact is the final Overview section, not a separate customer-facing page. -->
     <section class="section contact-preview" id="contact" aria-labelledby="contact-title">
@@ -114,7 +142,7 @@
             <img class="contact-company-logo" src="images/company logo.png" alt="Herb and Fashion Caoben company logo">
             <p class="contact-slogan">The Power of Herbs, The Beauty of Traditional Chinese Medicine.</p>
             <div class="contact-details" aria-label="Contact details">
-              <p class="contact-detail"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+60175082150">017-5082150</a></p>
+              <p class="contact-detail"><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+60175082150">+6017-5082150</a></p>
               <p class="contact-detail"><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:enquiryhfjb@gmail.com">enquiryhfjb@gmail.com</a></p>
             </div>
           </div>
@@ -122,16 +150,16 @@
           <div class="contact-offices">
             <h3 class="contact-column-title">Our Offices</h3>
             <div class="office-list">
-              <section class="office-entry" aria-label="Johor Branch">
-                <h4><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Johor Branch</h4>
+              <section class="office-entry" aria-label="Johor Office">
+                <h4><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Johor Office</h4>
                 <address>Block A 04-40, Eko Galleria, Jalan Eko Botani 3, Taman Eko Botani, 79100 Iskandar Puteri, Johor, Malaysia.</address>
               </section>
-              <section class="office-entry" aria-label="Selangor Branch">
-                <h4><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Selangor Branch</h4>
+              <section class="office-entry" aria-label="Selangor Office">
+                <h4><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Selangor Office</h4>
                 <address>169-1, Jalan Dataran Cheras 9, Dataran Perniagaan Cheras (Cheras Traders Square), 43200 Cheras, Selangor, Malaysia.</address>
               </section>
-              <section class="office-entry" aria-label="Sarawak Branch">
-                <h4><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Sarawak Branch</h4>
+              <section class="office-entry" aria-label="Sarawak Office">
+                <h4><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Sarawak Office</h4>
                 <address>Parent Lot 3257, Block 16, Sublot 25, 2nd Floor, Gala City, Jalan Tun Jugah, 93350 Kuching, Sarawak, Malaysia.</address>
               </section>
             </div>
@@ -143,14 +171,59 @@
               <a class="social-icon-link" href="https://www.instagram.com/herbandfashionmy?mdxt=MXdmYnkwdTVhaG9tag==" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="images/ig logo.png" alt=""></a>
               <a class="social-icon-link" href="http://xhslink.com/m/5NdIWPvYC0Z" aria-label="Xiaohongshu" target="_blank" rel="noopener noreferrer"><img src="images/xhs logo.png" alt=""></a>
               <button class="social-icon-link is-unavailable" type="button" aria-label="Facebook" disabled><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></button>
+              <button class="social-icon-link social-icon-link--whatsapp is-unavailable" type="button" aria-label="WhatsApp" disabled><img src="images/whatsapp logo.png" alt=""></button>
+              <a class="social-icon-link social-icon-link--shopee" href="https://my.shp.ee/2XUXYXj8" aria-label="Shopee" target="_blank" rel="noopener noreferrer"><img src="images/shopee logo.png" alt=""></a>
+            </div>
+            <div class="contact-resource-links" aria-label="More information">
+              <a class="contact-resource-link contact-column-title" href="faq.html"><span class="contact-resource-plus" aria-hidden="true">+</span><span class="resource-label-en">FAQ</span><span class="resource-label-zh" lang="zh-Hans">常见问题</span></a>
+              <a class="contact-resource-link contact-column-title" href="https://my.jobstreet.com/Herb&amp;Fashion-jobs/at-this-company"><span class="contact-resource-plus" aria-hidden="true">+</span><span class="resource-label-en">Career</span><span class="resource-label-zh" lang="zh-Hans">加入我们</span></a>
             </div>
           </div>
         </div>
+
+        <form class="enquiry-form" id="enquiry-form" action="https://formspree.io/f/xdeedqoj" method="POST" aria-label="Enquiry Form">
+          <h4 class="enquiry-form-title">Enquiry Form</h4>
+          <div class="enquiry-field">
+            <label for="enquiry-first-name">First Name</label>
+            <input id="enquiry-first-name" name="First Name" type="text" autocomplete="given-name" minlength="1" maxlength="50" required>
+          </div>
+          <div class="enquiry-field">
+            <label for="enquiry-last-name">Last Name</label>
+            <input id="enquiry-last-name" name="Last Name" type="text" autocomplete="family-name" minlength="1" maxlength="50" required>
+          </div>
+          <div class="enquiry-field">
+            <label for="enquiry-company">Company Name</label>
+            <input id="enquiry-company" name="Company Name" type="text" autocomplete="organization" minlength="1" maxlength="100">
+          </div>
+          <div class="enquiry-field">
+            <label for="enquiry-contact-number">Contact Number</label>
+            <input id="enquiry-contact-number" name="Contact Number" type="tel" autocomplete="tel" minlength="8" maxlength="16" required>
+          </div>
+          <div class="enquiry-field enquiry-field--email">
+            <label for="enquiry-email">Email</label>
+            <input id="enquiry-email" name="email" type="email" autocomplete="email" minlength="5" maxlength="254" required>
+          </div>
+          <div class="enquiry-field enquiry-field--message">
+            <label for="enquiry-message">Message</label>
+            <textarea id="enquiry-message" name="Message" rows="4" minlength="10" maxlength="2000" required></textarea>
+          </div>
+          <button class="enquiry-submit" type="submit">Send Enquiry</button>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-content"><a class="footer-wordmark" href="index.html">Herb <span class="plain-amp">&amp;</span> Fashion</a><p>© 2026 Herb <span class="plain-amp">&amp;</span> Fashion Sdn. Bhd. 202301003104 (1497023-V)</p><a class="back-to-top" href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></div></footer>
+  <footer class="site-footer"><div class="container footer-content"><a class="footer-wordmark" href="index.html">Herb <span class="plain-amp">&amp;</span> Fashion <span class="footer-country">Malaysia</span></a><p>© 2026 Herb <span class="plain-amp">&amp;</span> Fashion Sdn. Bhd. 202301003104 (1497023-V) · All Right Reserved</p><a class="back-to-top" href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></div><div class="container footer-legal-links" aria-label="Legal information">
+  <a href="documents/terms-and-conditions-en.pdf" data-legal-link data-pdf-en="documents/terms-and-conditions-en.pdf" data-pdf-zh="documents/terms-and-conditions-zh.pdf">Terms and Conditions</a>
+  <span class="footer-legal-divider" aria-hidden="true">|</span>
+  <a href="documents/privacy-policy-en.pdf" data-legal-link data-pdf-en="documents/privacy-policy-en.pdf" data-pdf-zh="documents/privacy-policy-zh.pdf">Privacy Policy</a>
+</div>
+  </footer>
   <script src="js/script.js"></script>
+  <script src="js/hero-parallax.js"></script>
+  <script src="js/category-gallery.js"></script>
+  <script src="js/category-gallery-waves.js"></script>
+  <script src="js/contact-mint-shader.js"></script>
+  <script src="js/services-timeline.js"></script>
 </body>
 </html>

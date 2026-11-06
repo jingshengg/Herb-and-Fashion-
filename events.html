@@ -1,8 +1,347 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Events by Herb & Fashion."><title>Herb and Fashion Malaysia Official Website</title><link rel="icon" type="image/png" href="images/company%20logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><link rel="stylesheet" href="css/style.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Events by Herb & Fashion.">
+  <title>Herb and Fashion Malaysia Official Website</title>
+  <link rel="icon" type="image/png" href="images/company%20logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/events.css">
+  <link rel="stylesheet" href="css/page-intro.css">
+  <script src="js/page-intro.js"></script>
+</head>
 <body id="top">
-  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html" aria-label="Herb & Fashion overview"><img class="brand-logo" src="images/company logo.png" alt="Hengqing logo"><span class="brand-name">Herb <span class="plain-amp">&amp;</span> Fashion</span></a><button class="menu-button" type="button" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span><span class="sr-only">Open menu</span></button><nav class="site-menu" id="site-menu" aria-label="Main navigation"><a href="index.html">Overview</a><a href="about.html">About Us</a><a href="products.html">Featured Products</a><a href="services.html">Our Services</a><a class="active" aria-current="page" href="events.html">Events</a><a href="index.html#contact">Contact Us</a><button class="language-toggle" type="button" aria-label="Switch language to Chinese" aria-pressed="false" data-language-toggle><span class="language-option language-option-en" aria-hidden="true">EN</span><span class="language-option language-option-zh" aria-hidden="true">中</span><span class="language-toggle-thumb" aria-hidden="true"></span></button></nav></div></header>
-  <main class="page-placeholder"><section class="placeholder-card"><p class="eyebrow">EVENTS</p><h1>Gatherings, launches and conversations.</h1><p>Event posters and photographs will be shared here. The Events page is ready for its first stories.</p><a class="button button-primary" href="index.html">Return to Overview <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a></section></main>
-  <footer class="site-footer"><div class="container footer-content"><a class="footer-wordmark" href="index.html">Herb <span class="plain-amp">&amp;</span> Fashion</a><p>© 2026 Herb <span class="plain-amp">&amp;</span> Fashion Sdn. Bhd. 202301003104 (1497023-V)</p><a class="back-to-top" href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a></div></footer><script src="js/script.js"></script>
-</body></html>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Herb & Fashion overview">
+        <img class="brand-logo" src="images/company logo.png" alt="Herb & Fashion company logo">
+        <span class="brand-name">Herb <span class="plain-amp">&amp;</span> Fashion<span class="brand-chinese" lang="zh-Hans">草本时尚</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-controls="site-menu" aria-expanded="false">
+        <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+      </button>
+      <nav class="site-menu" id="site-menu" aria-label="Main navigation">
+        <a href="index.html">Overview</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Featured Products</a>
+        <a href="services.html">Our Services</a>
+        <a class="active" aria-current="page" href="events.html">Events</a>
+        <a href="index.html#contact">Contact Us</a>
+        <button class="language-toggle" type="button" aria-label="Switch language to Chinese" aria-pressed="false" data-language-toggle>
+          <span class="language-option language-option-en" aria-hidden="true">EN</span>
+          <span class="language-option language-option-zh" aria-hidden="true">中</span>
+          <span class="language-toggle-thumb" aria-hidden="true"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="about-banner events-banner" aria-labelledby="events-page-title">
+      <h1 class="sr-only" id="events-page-title">Events</h1>
+      <img src="images/event%20banner.png" data-banner-zh="images/event chinese banner.png" alt="" width="1920" height="300">
+    </header>
+
+    <section class="events-stage" aria-label="Event records">
+      <div class="events-cabinet-lines" aria-hidden="true"></div>
+      <div class="container events-stage-inner">
+        <button class="prescription-cover" id="open-kuching-record" data-record-target="kuching-record" type="button" aria-expanded="false" aria-controls="kuching-record">
+          <span class="prescription-cover-inner">
+            <span class="prescription-cover-top">
+              <img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt="" aria-hidden="true">
+              <span class="prescription-index"><span lang="en">EVENT RECORD · 01</span><span lang="zh-Hans">活动档案 · 01</span></span>
+            </span>
+            <span class="prescription-cover-rule" aria-hidden="true"></span>
+            <span class="prescription-cover-title-row">
+              <span class="prescription-cover-title" lang="en">Kuching Pop-up Event</span>
+              <span class="prescription-cover-title-zh" lang="zh-Hans">古晋快闪活动</span>
+              <span class="cover-sticker-inline cover-sticker-title" aria-hidden="true"><img src="images/event/stickers/vintage-waving-cat.png" alt=""></span>
+            </span>
+            <span class="prescription-cover-meta">
+              <span class="cover-meta-entry">
+                <span class="cover-meta-label"><span lang="en">DATE</span><span lang="zh-Hans">日期</span></span>
+                <span class="cover-meta-value">17/07/2026 - 18/07/2026</span>
+              </span>
+              <span class="cover-meta-entry cover-meta-location">
+                <span class="cover-meta-label"><span lang="en">LOCATION</span><span lang="zh-Hans">地点</span></span>
+                <span class="cover-meta-value-row">
+                  <span lang="en">Sing Lee Pharmacy, Kuching</span>
+                  <span lang="zh-Hans">古晋信利西药行</span>
+                  <span class="cover-sticker-inline cover-sticker-location" aria-hidden="true"><img src="images/event/stickers/sarawak-flag.png" alt=""></span>
+                </span>
+              </span>
+            </span>
+            <span class="prescription-cover-open">
+              <span lang="en">Open record</span><span lang="zh-Hans">查看内容</span><span aria-hidden="true">↗</span>
+            </span>
+          </span>
+          <span class="cover-fold-edge cover-fold-edge-one" aria-hidden="true"></span>
+          <span class="cover-fold-edge cover-fold-edge-two" aria-hidden="true"></span>
+        </button>
+
+        <button class="prescription-cover prescription-cover-sibu" id="open-sibu-record" data-record-target="sibu-record" type="button" aria-expanded="false" aria-controls="sibu-record">
+          <span class="prescription-cover-inner">
+            <span class="prescription-cover-top">
+              <img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt="" aria-hidden="true">
+              <span class="prescription-index"><span lang="en">EVENT RECORD · 02</span><span lang="zh-Hans">活动档案 · 02</span></span>
+            </span>
+            <span class="prescription-cover-rule" aria-hidden="true"></span>
+            <span class="prescription-cover-title-row">
+              <span class="prescription-cover-title" lang="en">Sibu Pop-up Event</span>
+              <span class="prescription-cover-title-zh" lang="zh-Hans">诗巫快闪活动</span>
+              <span class="cover-sticker-inline cover-sticker-title cover-sticker-swan" aria-hidden="true"><img src="images/event/stickers/vintage-swan.png" alt=""></span>
+            </span>
+            <span class="prescription-cover-meta">
+              <span class="cover-meta-entry">
+                <span class="cover-meta-label"><span lang="en">DATE</span><span lang="zh-Hans">日期</span></span>
+                <span class="cover-meta-value">04/08/2026 - 09/08/2026</span>
+              </span>
+              <span class="cover-meta-entry cover-meta-location">
+                <span class="cover-meta-label"><span lang="en">LOCATION</span><span lang="zh-Hans">地点</span></span>
+                <span class="cover-meta-value-row">
+                  <span lang="en">Unicare Pharmacy, Sibu</span>
+                  <span lang="zh-Hans">诗巫各大康民药剂行</span>
+                </span>
+              </span>
+            </span>
+            <span class="prescription-cover-open">
+              <span lang="en">Open record</span><span lang="zh-Hans">查看内容</span>
+              <span class="cover-sticker-inline cover-sticker-open-flag" aria-hidden="true"><img src="images/event/stickers/sarawak-flag.png" alt=""></span>
+              <span aria-hidden="true">↗</span>
+            </span>
+          </span>
+          <span class="cover-fold-edge cover-fold-edge-one" aria-hidden="true"></span>
+          <span class="cover-fold-edge cover-fold-edge-two" aria-hidden="true"></span>
+        </button>
+
+        <button class="prescription-cover prescription-cover-johor" id="open-johor-record" data-record-target="johor-record" type="button" aria-expanded="false" aria-controls="johor-record">
+          <span class="prescription-cover-inner">
+            <span class="prescription-cover-top">
+              <img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt="" aria-hidden="true">
+              <span class="prescription-index"><span lang="en">EVENT RECORD · 03</span><span lang="zh-Hans">活动档案 · 03</span></span>
+            </span>
+            <span class="prescription-cover-rule" aria-hidden="true"></span>
+            <span class="prescription-cover-title-row">
+              <span class="prescription-cover-title" lang="en">Johor Bahru Pop-up Event</span>
+              <span class="prescription-cover-title-zh" lang="zh-Hans">新山快闪活动</span>
+              <span class="cover-sticker-inline cover-sticker-title cover-sticker-arch" aria-hidden="true"><img src="images/event/stickers/johor-arch.png" alt=""></span>
+            </span>
+            <span class="prescription-cover-meta">
+              <span class="cover-meta-entry">
+                <span class="cover-meta-label"><span lang="en">DATE</span><span lang="zh-Hans">日期</span></span>
+                <span class="cover-meta-value">14/08/2026 - 16/08/2026</span>
+              </span>
+              <span class="cover-meta-entry cover-meta-location">
+                <span class="cover-meta-label"><span lang="en">LOCATION</span><span lang="zh-Hans">地点</span></span>
+                <span class="cover-meta-value-row">
+                  <span lang="en">Green House, Johor Bahru</span>
+                  <span lang="zh-Hans">新山恩粮坊</span>
+                  <span class="cover-sticker-inline cover-sticker-location" aria-hidden="true"><img src="images/event/stickers/johor-flag.png" alt=""></span>
+                </span>
+              </span>
+            </span>
+            <span class="prescription-cover-open">
+              <span lang="en">Open record</span><span lang="zh-Hans">查看内容</span><span aria-hidden="true">↗</span>
+            </span>
+          </span>
+          <span class="cover-fold-edge cover-fold-edge-one" aria-hidden="true"></span>
+          <span class="cover-fold-edge cover-fold-edge-two" aria-hidden="true"></span>
+        </button>
+        <button class="prescription-cover prescription-cover-george" id="open-george-record" data-record-target="george-record" type="button" aria-expanded="false" aria-controls="george-record">
+          <span class="prescription-cover-inner">
+            <span class="prescription-cover-top">
+              <img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt="" aria-hidden="true">
+              <span class="prescription-index"><span lang="en">EVENT RECORD · 04</span><span lang="zh-Hans">活动档案 · 04</span></span>
+            </span>
+            <span class="prescription-cover-rule" aria-hidden="true"></span>
+            <span class="cover-sticker-inline cover-sticker-record-cat" aria-hidden="true"><img src="images/event/stickers/vintage-waving-cat.png" alt=""></span>
+            <span class="prescription-cover-title-row">
+              <span class="prescription-cover-title" lang="en">Kuching Pop-up Event</span>
+              <span class="prescription-cover-title-zh" lang="zh-Hans">古晋快闪活动</span>
+            </span>
+            <span class="prescription-cover-meta">
+              <span class="cover-meta-entry cover-meta-date-entry">
+                <span class="cover-meta-label"><span lang="en">DATE</span><span lang="zh-Hans">日期</span></span>
+                <span class="cover-meta-value">31/10/2026 - 01/11/2026</span>
+                <span class="cover-sticker-inline cover-sticker-date" aria-hidden="true"><img src="images/event/stickers/sarawak-flag.png" alt=""></span>
+              </span>
+              <span class="cover-meta-entry cover-meta-location">
+                <span class="cover-meta-label"><span lang="en">LOCATION</span><span lang="zh-Hans">地点</span></span>
+                <span class="cover-meta-value-row">
+                  <span lang="en">George Pharmacy, Kuching</span>
+                  <span lang="zh-Hans">古晋乔治药剂行</span>
+                </span>
+              </span>
+            </span>
+            <span class="prescription-cover-open">
+              <span lang="en">Open record</span><span lang="zh-Hans">查看内容</span><span aria-hidden="true">↗</span>
+            </span>
+          </span>
+          <span class="cover-fold-edge cover-fold-edge-one" aria-hidden="true"></span>
+          <span class="cover-fold-edge cover-fold-edge-two" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <div class="event-record-overlay" id="kuching-record" data-event-record-overlay hidden>
+      <article class="event-record-spread" role="dialog" aria-modal="true" aria-labelledby="kuching-record-title">
+        <button class="event-record-close" type="button" aria-label="Close event record"><span aria-hidden="true">×</span><span lang="en">Close</span><span lang="zh-Hans">关闭</span></button>
+        <div class="event-paper-panels event-paper-panels-gallery event-paper-panels-kuching">
+          <section class="event-paper-summary">
+            <div class="event-paper-heading">
+              <p class="event-paper-kicker">Herb and Fashion 草本时尚</p>
+              <h2 id="kuching-record-title"><span lang="en">Kuching Pop-up Event</span><span class="event-title-zh" lang="zh-Hans">古晋快闪活动</span></h2>
+              <p class="event-paper-meta"><span lang="en">17/07/2026 - 18/07/2026 · Sing Lee Pharmacy, Kuching</span><span lang="zh-Hans">17/07/2026 - 18/07/2026 · 古晋信利西药行</span></p>
+            </div>
+            <div class="event-description-block">
+              <p lang="en">This two-day health event, hosted at Sing Lee Pharmacy in Kuching, integrates modern technology with Traditional Chinese Medicine. The event features a smart automated device to provide consumers with quick and complimentary "smart TCM pulse reading" services. Once the reading is complete, on-site personnel will analyze the generated computer data to conduct a one-on-one explanation of the 9 TCM Body Constitutions, providing targeted lifestyle and wellness recommendations.</p>
+              <p lang="zh-Hans">本活动为期两天，特别驻扎于古晋信利西药行（Sing Lee Pharmacy），是一场结合现代科技与传统中医的健康体验活动。活动现场配备智能自动把脉仪，专门为消费者提供免费且快捷的“智能中医把脉”服务。把脉完成后，现场人员将分析生成的电脑数据，进行一对一的中医九大体质讲解，并提供针对性的日常养生与健康建议。</p>
+            </div>
+            <img class="event-company-logo" src="images/company logo.png" alt="Herb & Fashion company logo">
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead has-tape tape-top-left"><img src="images/event/singlee/optimized/IMG_8835.jpg" alt="A visitor receiving a smart TCM wellness reading at Sing Lee Pharmacy" data-alt-zh="访客在信利西药行体验智能中医健康检测" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/singlee/optimized/IMG_8778.jpg" alt="A staff member guiding a visitor through the in-store wellness activity" data-alt-zh="工作人员为访客讲解驻店健康体验活动" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide has-tape tape-bottom-right"><img src="images/event/singlee/optimized/IMG_8813.jpg" alt="A visitor taking part in a one-to-one wellness consultation" data-alt-zh="访客参与一对一健康咨询" loading="lazy"></figure>
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide"><img src="images/event/singlee/optimized/IMG_8822.jpg" alt="A visitor learning about the wellness assessment results" data-alt-zh="访客了解健康检测结果" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small has-tape tape-top-left"><img src="images/event/singlee/optimized/IMG_8841.jpg" alt="A one-to-one consultation during the Kuching activation" data-alt-zh="古晋驻店活动中的一对一咨询" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide"><img src="images/event/singlee/optimized/IMG_8842.jpg" alt="Visitors speaking with staff at the event" data-alt-zh="活动现场访客与工作人员交流" loading="lazy"></figure>
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead has-tape tape-bottom-right"><img src="images/event/singlee/optimized/IMG_8772.jpg" alt="Visitors taking part in the free smart TCM pulse reading service" data-alt-zh="访客体验免费的智能中医把脉服务" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/singlee/optimized/IMG_8846.jpg" alt="A visitor receiving guidance from the event team" data-alt-zh="访客接受活动工作人员的健康建议" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide"><img src="images/event/singlee/optimized/IMG_8854.jpeg" alt="A smart wellness consultation shared with the local community" data-alt-zh="工作人员为当地社区访客提供智能健康咨询" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide"><img src="images/event/singlee/optimized/IMG_8867.jpeg" alt="A visitor completing the in-store wellness assessment" data-alt-zh="访客完成驻店健康检测" loading="lazy"></figure>
+          </section>
+        </div>
+        <div class="event-cover-flap" aria-hidden="true"><img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt=""><span class="cover-flap-title"><span lang="en">Kuching Pop-up Event</span><span lang="zh-Hans">古晋快闪活动</span></span><span>17/07/2026 - 18/07/2026</span><span lang="en">Sing Lee Pharmacy · Kuching</span><span lang="zh-Hans">古晋信利西药行</span></div>
+      </article>
+    </div>
+
+    <div class="event-record-overlay" id="sibu-record" data-event-record-overlay hidden>
+      <article class="event-record-spread" role="dialog" aria-modal="true" aria-labelledby="sibu-record-title">
+        <button class="event-record-close" type="button" aria-label="Close event record"><span aria-hidden="true">×</span><span lang="en">Close</span><span lang="zh-Hans">关闭</span></button>
+        <div class="event-paper-panels event-paper-panels-gallery event-paper-panels-sibu">
+          <section class="event-paper-summary">
+            <div class="event-paper-heading">
+              <p class="event-paper-kicker">Herb and Fashion 草本时尚</p>
+              <h2 id="sibu-record-title"><span lang="en">Sibu Pop-up Event</span><span class="event-title-zh" lang="zh-Hans">诗巫快闪活动</span></h2>
+              <p class="event-paper-meta"><span lang="en">04/08/2026 - 09/08/2026 · Unicare Pharmacy, Sibu</span><span lang="zh-Hans">04/08/2026 - 09/08/2026 · 诗巫各大康民药剂行</span></p>
+            </div>
+            <div class="event-description-block">
+              <p lang="en">This 6-day health roadshow is held across various Unicare Pharmacy branches in Sibu (including CSH, Unicity, Townsquare, Wonderful, Teku, and Hanns). The event features a smart automated device to provide consumers with quick "smart TCM pulse reading" services. Once the reading is complete, on-site personnel will analyze the generated computer data to conduct a one-on-one explanation of the 9 TCM Body Constitutions. Based on individual health conditions, our staff will then recommend the most suitable health products and wellness solutions for the consumers.</p>
+              <p lang="zh-Hans">本活动为期6天，于诗巫（Sibu）各大康民药剂行（包括 CSH、Unicity、Townsquare、Wonderful、Teku 及 Hanns 分行）巡回开展。活动现场配备智能自动把脉仪，专门为消费者提供快捷的“智能中医把脉”服务。把脉完成后，现场人员将分析生成的电脑数据，进行一对一的中医九大体质讲解，并根据个人的具体体质状况，为消费者建议最适合的健康产品与养生方案。</p>
+            </div>
+            <img class="event-company-logo" src="images/company logo.png" alt="Herb & Fashion company logo">
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead has-tape tape-top-left"><img src="images/event/unicare/optimized/1.jpg" alt="A visitor using the smart TCM diagnostic device" data-alt-zh="访客使用智能中医诊断仪" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/2.jpg" alt="Staff explaining the wellness service to a pharmacy visitor" data-alt-zh="工作人员向药剂行访客介绍健康服务" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/3.jpg" alt="A staff member assisting with a smart health assessment" data-alt-zh="工作人员协助进行智能健康检测" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/4.jpg" alt="A team member reviewing assessment results with a visitor" data-alt-zh="工作人员与访客查看检测结果" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small has-tape tape-bottom-right"><img src="images/event/unicare/optimized/5.jpg" alt="A visitor receiving a smart TCM pulse reading" data-alt-zh="访客体验智能中医把脉" loading="lazy"></figure>
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead"><img src="images/event/unicare/optimized/6.jpg" alt="A one-to-one wellness consultation at the pharmacy" data-alt-zh="药剂行内的一对一健康咨询" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small has-tape tape-bottom-right"><img src="images/event/unicare/optimized/7.jpg" alt="Staff guiding a visitor through the diagnostic process" data-alt-zh="工作人员引导访客完成检测流程" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small has-tape tape-top-left"><img src="images/event/unicare/optimized/8.jpg" alt="An older visitor taking part in a health assessment" data-alt-zh="年长访客参与健康检测" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/9.jpg" alt="A staff member discussing wellness information with a visitor" data-alt-zh="工作人员与访客讲解健康资讯" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/10.jpg" alt="A pharmacy visitor learning about the wellness device" data-alt-zh="药剂行访客了解健康检测仪" loading="lazy"></figure>
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead has-tape tape-top-left"><img src="images/event/unicare/optimized/11.jpg" alt="An older visitor receiving a wellness consultation" data-alt-zh="年长访客接受健康咨询" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/12.jpg" alt="Staff explaining health assessment information on a screen" data-alt-zh="工作人员通过屏幕讲解健康检测资料" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/unicare/optimized/13.jpg" alt="A team member helping a visitor review health information" data-alt-zh="工作人员协助访客了解健康资讯" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide has-tape tape-bottom-right"><img src="images/event/unicare/optimized/14.jpg" alt="A participant completing the smart TCM pulse reading" data-alt-zh="参与者完成智能中医把脉检测" loading="lazy"></figure>
+          </section>
+        </div>
+        <div class="event-cover-flap" aria-hidden="true"><img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt=""><span class="cover-flap-title"><span lang="en">Sibu Pop-up Event</span><span lang="zh-Hans">诗巫快闪活动</span></span><span>04/08/2026 - 09/08/2026</span><span lang="en">Unicare Pharmacy · Sibu</span><span lang="zh-Hans">诗巫各大康民药剂行</span></div>
+      </article>
+    </div>
+
+    <div class="event-record-overlay" id="johor-record" data-event-record-overlay hidden>
+      <article class="event-record-spread" role="dialog" aria-modal="true" aria-labelledby="johor-record-title">
+        <button class="event-record-close" type="button" aria-label="Close event record"><span aria-hidden="true">×</span><span lang="en">Close</span><span lang="zh-Hans">关闭</span></button>
+        <div class="event-paper-panels event-paper-panels-gallery event-paper-panels-johor">
+          <section class="event-paper-summary">
+            <div class="event-paper-heading">
+              <p class="event-paper-kicker">Herb and Fashion 草本时尚</p>
+              <h2 id="johor-record-title"><span lang="en">Johor Bahru Pop-up Event</span><span class="event-title-zh" lang="zh-Hans">新山快闪活动</span></h2>
+              <p class="event-paper-meta"><span lang="en">14/08/2026 - 16/08/2026 · Green House, Johor Bahru</span><span lang="zh-Hans">14/08/2026 - 16/08/2026 · 新山恩粮坊</span></p>
+            </div>
+            <div class="event-description-block">
+              <p lang="en">This 3-day event is held at the Green House branches in Johor Jaya and Impian Emas, Johor Bahru, offering consumers a "Free AI TCM Health Analysis Experience." The event features a smart automated device for a quick TCM pulse reading. Once the reading is complete, on-site personnel will analyze the computer-generated data to conduct a one-on-one explanation of the 9 TCM Body Constitutions. Based on individual health conditions, our staff will then recommend the most suitable health products and wellness solutions.</p>
+              <p lang="zh-Hans">本活动为期3天，于新山（Johor Bahru）恩粮坊的 Johor Jaya 及 Impian Emas 分店举办，专门为消费者提供“免费AI中医健康分析体验”。活动现场配备智能自动把脉仪，把脉完成后，现场人员将分析生成的电脑数据，进行一对一的中医九大体质讲解。最后，工作人员会根据个人的具体体质状况，为消费者建议最适合的健康产品与日常养生方案。</p>
+            </div>
+            <img class="event-company-logo" src="images/company logo.png" alt="Herb & Fashion company logo">
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead has-tape tape-top-left"><img src="images/event/greenhouse/10.jpg" alt="A visitor receiving a smart TCM pulse reading from the event team" data-alt-zh="访客在活动现场体验智能中医把脉" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/greenhouse/8.jpg" alt="A staff member guiding a visitor through the health analysis experience" data-alt-zh="工作人员引导访客体验健康分析服务" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small"><img src="images/event/greenhouse/12.jpg" alt="A visitor reviewing smart TCM analysis results" data-alt-zh="访客查看智能中医分析结果" loading="lazy"></figure>
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide"><img src="images/event/greenhouse/14.jpg" alt="A participant using the automated pulse reading device" data-alt-zh="参与者使用智能自动把脉仪" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-small has-tape tape-bottom-right"><img src="images/event/greenhouse/16.jpg" alt="Staff explaining a participant's health information" data-alt-zh="工作人员为参与者讲解健康资料" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide has-tape tape-top-left"><img src="images/event/greenhouse/20.jpg" alt="A one-to-one discussion of the TCM health analysis" data-alt-zh="工作人员与访客进行一对一中医健康分析讲解" loading="lazy"></figure>
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-gallery-lead"><img src="images/event/greenhouse/26.jpg" alt="Visitors taking part in the Johor Bahru community activation" data-alt-zh="访客参与新山驻店活动" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-gallery-wide has-tape tape-bottom-right"><img src="images/event/greenhouse/30.jpg" alt="A close view of the smart automated TCM pulse reading device in use" data-alt-zh="智能自动中医把脉仪使用现场" loading="lazy"></figure>
+          </section>
+        </div>
+        <div class="event-cover-flap" aria-hidden="true"><img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt=""><span class="cover-flap-title"><span lang="en">Johor Bahru Pop-up Event</span><span lang="zh-Hans">新山快闪活动</span></span><span>14/08/2026 - 16/08/2026</span><span lang="en">Green House · Johor Bahru</span><span lang="zh-Hans">恩粮坊 · 新山</span></div>
+      </article>
+    </div>
+    <div class="event-record-overlay" id="george-record" data-event-record-overlay hidden>
+      <article class="event-record-spread" role="dialog" aria-modal="true" aria-labelledby="george-record-title">
+        <button class="event-record-close" type="button" aria-label="Close event record"><span aria-hidden="true">×</span><span lang="en">Close</span><span lang="zh-Hans">关闭</span></button>
+        <div class="event-paper-panels event-paper-panels-gallery event-paper-panels-george">
+          <section class="event-paper-summary">
+            <div class="event-paper-heading">
+              <p class="event-paper-kicker">Herb and Fashion 草本时尚</p>
+              <h2 id="george-record-title"><span lang="en">Kuching Pop-up Event</span><span class="event-title-zh" lang="zh-Hans">古晋快闪活动</span></h2>
+              <p class="event-paper-meta"><span lang="en">31/10/2026 - 01/11/2026 · George Pharmacy, Kuching</span><span lang="zh-Hans">31/10/2026 - 01/11/2026 · 古晋乔治药剂行</span></p>
+            </div>
+            <div class="event-description-block">
+              <p lang="en">This two-day health event is held at George Pharmacy in Kuching, offering consumers an "AI TCM Pulse Reading Health Screening." The event features a smart automated device for a quick TCM pulse reading. Once the reading is complete, on-site personnel will analyze the generated computer data to conduct a one-on-one explanation of the 9 TCM Body Constitutions. Based on individual health conditions, our staff will then use printed materials to recommend the most suitable health products and wellness solutions.</p>
+              <p lang="zh-Hans">本活动为期两天，于古晋（Kuching）乔治药剂行举办，专门为消费者提供“AI把脉健康检测”体验。活动现场配备智能自动把脉仪，把脉完成后，现场人员将分析生成的电脑数据，进行一对一的中医九大体质讲解。最后，工作人员会结合图文资料，根据个人的具体体质状况，为消费者建议最适合的健康产品与日常养生方案。</p>
+            </div>
+            <img class="event-company-logo" src="images/company logo.png" alt="Herb & Fashion company logo">
+          </section>
+          <section class="event-paper-panel">
+            <figure class="event-photo event-photo-gallery event-photo-george-1 has-tape tape-top-left"><img src="images/event/george/1.jpeg" alt="A staff member explains wellness information to a visitor at George Pharmacy" data-alt-zh="工作人员在乔治药剂行向访客讲解健康资讯" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-george-2"><img src="images/event/george/2.jpeg" alt="A visitor receives a smart pulse reading while a staff member reviews the data" data-alt-zh="访客体验智能把脉，工作人员查看检测数据" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-george-3 has-tape tape-bottom-right"><img src="images/event/george/3.png" alt="A staff member assists a visitor during the TCM health screening" data-alt-zh="工作人员协助访客进行中医健康检测" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-george-4 has-tape tape-top-left"><img src="images/event/george/4.png" alt="Staff explain product and wellness information using printed materials" data-alt-zh="工作人员结合图文资料讲解产品与养生资讯" loading="lazy"></figure>
+            <figure class="event-photo event-photo-gallery event-photo-george-5 has-tape tape-bottom-right"><img src="images/event/george/5.png" alt="A staff member shares product recommendations with a pharmacy visitor" data-alt-zh="工作人员向药剂行访客介绍产品建议" loading="lazy"></figure>
+          </section>
+        </div>
+        <div class="event-cover-flap" aria-hidden="true"><img class="cover-seal" src="images/event/stickers/草本时尚印章.png" alt=""><span class="cover-flap-title"><span lang="en">Kuching Pop-up Event</span><span lang="zh-Hans">古晋快闪活动</span></span><span>31/10/2026 - 01/11/2026</span><span lang="en">George Pharmacy · Kuching</span><span lang="zh-Hans">古晋乔治药剂行</span></div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a class="footer-wordmark" href="index.html">Herb <span class="plain-amp">&amp;</span> Fashion <span class="footer-country">Malaysia</span></a>
+      <p>© 2026 Herb <span class="plain-amp">&amp;</span> Fashion Sdn. Bhd. 202301003104 (1497023-V) · All Right Reserved</p>
+      <a class="back-to-top" href="#top">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  <div class="container footer-legal-links" aria-label="Legal information">
+  <a href="documents/terms-and-conditions-en.pdf" data-legal-link data-pdf-en="documents/terms-and-conditions-en.pdf" data-pdf-zh="documents/terms-and-conditions-zh.pdf">Terms and Conditions</a>
+  <span class="footer-legal-divider" aria-hidden="true">|</span>
+  <a href="documents/privacy-policy-en.pdf" data-legal-link data-pdf-en="documents/privacy-policy-en.pdf" data-pdf-zh="documents/privacy-policy-zh.pdf">Privacy Policy</a>
+</div>
+  </footer>
+  <script src="js/script.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>
