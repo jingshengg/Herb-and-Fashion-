@@ -1,25 +1,205 @@
-// Product names, categories, images, and editable catalogue prices.
+// Product names, categories, images, licenses, and editable catalogue prices.
 window.herbProductCatalogue = [
-  { id: 'inner-balance-essence', category: 'heart-circulation', categoryName: 'Heart & Circulation', name: 'INNER BALANCE ESSENCE CAPSULE', chineseName: '清衡方', price: 170, image: 'images/Products/H/Malaysia_清衡方.png' },
-  { id: 'restore-capsule', category: 'heart-circulation', categoryName: 'Heart & Circulation', name: 'RESTORE CAPSULE', chineseName: '复修源', price: 200, image: 'images/Products/H/马来西亚_复修源 Restore Capsule.png' },
-  { id: 'natto-complex-capsule', category: 'heart-circulation', categoryName: 'Heart & Circulation', name: 'NATTO COMPLEX CAPSULE', chineseName: '纳豆复方胶囊', price: 160, image: 'images/Products/H/马来西亚_纳豆复方 Natto Complex Capsule.png' },
-  { id: 'perilla-oil-soft-gel-capsule', category: 'heart-circulation', categoryName: 'Heart & Circulation', name: 'PERILLA OIL SOFT GEL CAPSULE', chineseName: '紫苏油软胶囊', price: 200, image: 'images/Products/H/马来西亚_紫苏油 Perilla Oil Soft Gel.png' },
-  { id: 'hawthorn-cassia-seed-plus', category: 'heart-circulation', categoryName: 'Heart & Circulation', name: 'HAWTHORN CASSIA SEED+ CAPSULE', chineseName: '山楂决明子+胶囊', price: 150, image: 'images/Products/H/马来西亚_山楂决明子+ Hawthorn Cassia Seed+.png' },
-  { id: 'calcium-collagen-plus', category: 'bones-joints', categoryName: 'Bones & Joints', name: 'CALCIUM COLLAGEN+ CAPSULE', chineseName: '钙质胶原+', price: 160, image: '' },
-  { id: 'seaweed-calcium-plus', category: 'bones-joints', categoryName: 'Bones & Joints', name: 'SEAWEED CALCIUM+ CAPSULE', chineseName: '红藻钙+', price: 50, image: 'images/Products/B/Malaysia_红藻钙.png' },
-  { id: 'mu-gua-guan-jie-capsule', category: 'bones-joints', categoryName: 'Bones & Joints', name: 'MU GUA GUAN JIE CAPSULE', chineseName: '木瓜关节胶囊', price: 180, image: '' },
-  { id: 'pain-relief', category: 'bones-joints', categoryName: 'Bones & Joints', name: 'PAIN RELIEF', chineseName: '舒痛', price: 250, image: 'images/Products/B/马来西亚_舒痛 Pain Relief.png' },
-  { id: 'natural-sleep-ease-capsule', category: 'sleep-stress', categoryName: 'Sleep & Stress', name: 'NATURAL SLEEP EASE CAPSULE', chineseName: '舒眠方胶囊', price: 160, image: 'images/Products/S/马来西亚_舒眠方 Natural Sleep Ease Capsule.png' },
-  { id: 'bupleurum-complex-capsule', category: 'sleep-stress', categoryName: 'Sleep & Stress', name: 'BUPLEURUM COMPLEX CAPSULE', chineseName: '柴胡复方', price: 180, image: 'images/Products/S/Malaysia_柴胡复方.png' },
-  { id: 'cordyceps-rhodiola-rosea-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'CORDYCEPS RHODIOLA ROSEA CAPSULE', chineseName: '虫草红景天', price: 180, image: 'images/Products/D/马来西亚_虫草红景天 Cordyceps Rhodiola Rosea.png' },
-  { id: 'cough-ease-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'COUGH EASE CAPSULE', chineseName: '舒咳宁', price: 150, image: 'images/Products/D/马来西亚_舒咳宁 Cough Ease Capsule.png' },
-  { id: 'v-strength-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'V-STRENGTH CAPSULE', chineseName: '滋肾源', price: 160, image: 'images/Products/D/马来西亚_滋肾源 V-Strength Capsule.png' },
-  { id: 'womens-treasure-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: "WOMEN'S TREASURE CAPSULE", chineseName: '女人宝', price: 200, image: '' },
-  { id: 'revital-essence-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'REVITAL ESSENCE CAPSULE', chineseName: '养元复气胶囊', price: 250, image: 'images/Products/D/马来西亚_养元复气 Revital Essence.png' },
-  { id: 'eye-health-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'EYE HEALTH CAPSULE', chineseName: '明眸胶囊', price: 160, image: 'images/Products/D/马来西亚_明眸胶囊 Eye Health Capsule.png' },
-  { id: 'aloe-prebiotic', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'ALOE PREBIOTIC', chineseName: '芦荟益生原', price: 230, image: '' },
-  { id: 'grape-seed-extract-300mg', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'GRAPE SEED EXTRACT 300MG CAPSULE', chineseName: '葡萄籽萃取物胶囊', price: 50, image: '' },
-  { id: 'harmony-wellness-capsule', category: 'daily-vitality', categoryName: 'Daily Vitality', name: 'HARMONY WELLNESS CAPSULE', chineseName: '疏养方', price: 50, image: '' }
+  {
+    "id": "inner-balance-essence",
+    "category": "heart-circulation",
+    "categoryName": "Heart & Circulation",
+    "name": "INNER BALANCE ESSENCE CAPSULE",
+    "chineseName": "清衡方",
+    "price": 170,
+    "image": "images/Products/H/Malaysia_清衡方.png",
+    "license": "MAL24046067TC"
+  },
+  {
+    "id": "restore-capsule",
+    "category": "heart-circulation",
+    "categoryName": "Heart & Circulation",
+    "name": "RESTORE CAPSULE",
+    "chineseName": "复修源",
+    "price": 200,
+    "image": "images/Products/H/马来西亚_复修源 Restore Capsule.png",
+    "license": "MAL24046068TC"
+  },
+  {
+    "id": "natto-complex-capsule",
+    "category": "heart-circulation",
+    "categoryName": "Heart & Circulation",
+    "name": "NATTO COMPLEX CAPSULE",
+    "chineseName": "纳豆复方胶囊",
+    "price": 160,
+    "image": "images/Products/H/马来西亚_纳豆复方 Natto Complex Capsule.png",
+    "license": "MAL24056119TC"
+  },
+  {
+    "id": "perilla-oil-soft-gel-capsule",
+    "category": "heart-circulation",
+    "categoryName": "Heart & Circulation",
+    "name": "PERILLA OIL SOFT GEL CAPSULE",
+    "chineseName": "紫苏油软胶囊",
+    "price": 200,
+    "image": "images/Products/H/马来西亚_紫苏油 Perilla Oil Soft Gel.png",
+    "license": "MAL24066139TC"
+  },
+  {
+    "id": "hawthorn-cassia-seed-plus",
+    "category": "heart-circulation",
+    "categoryName": "Heart & Circulation",
+    "name": "HAWTHORN CASSIA SEED+ CAPSULE",
+    "chineseName": "山楂决明子+胶囊",
+    "price": 150,
+    "image": "images/Products/H/马来西亚_山楂决明子+ Hawthorn Cassia Seed+.png",
+    "license": "MAL24086053TC"
+  },
+  {
+    "id": "calcium-collagen-plus",
+    "category": "bones-joints",
+    "categoryName": "Bones & Joints",
+    "name": "CALCIUM COLLAGEN+ CAPSULE",
+    "chineseName": "钙质胶原+",
+    "price": 160,
+    "image": "images/Products/B/Calcium_Collagen_Plus.png",
+    "license": "MAL24016066NC"
+  },
+  {
+    "id": "seaweed-calcium-plus",
+    "category": "bones-joints",
+    "categoryName": "Bones & Joints",
+    "name": "SEAWEED CALCIUM+ CAPSULE",
+    "chineseName": "红藻钙+",
+    "price": 160,
+    "image": "images/Products/B/Malaysia_红藻钙.png",
+    "license": "MAL26106077NC"
+  },
+  {
+    "id": "long-mu-jiang-huang-plus",
+    "category": "bones-joints",
+    "categoryName": "Bones & Joints",
+    "name": "LONG MU JIANG HUANG+ CAPSULE",
+    "chineseName": "龙牡姜黄+胶囊",
+    "price": 180,
+    "image": "images/Products/B/Long_Mu_Jiang_Huang_Plus.png",
+    "license": "MAL24086065TC"
+  },
+  {
+    "id": "pain-relief",
+    "category": "bones-joints",
+    "categoryName": "Bones & Joints",
+    "name": "PAIN RELIEF",
+    "chineseName": "舒痛",
+    "price": 250,
+    "image": "images/Products/B/马来西亚_舒痛 Pain Relief.png",
+    "license": "MAL24066134TC"
+  },
+  {
+    "id": "natural-sleep-ease-capsule",
+    "category": "sleep-stress",
+    "categoryName": "Sleep & Stress",
+    "name": "NATURAL SLEEP EASE CAPSULE",
+    "chineseName": "舒眠方胶囊",
+    "price": 160,
+    "image": "images/Products/S/马来西亚_舒眠方 Natural Sleep Ease Capsule.png",
+    "license": "MAL24076069TC"
+  },
+  {
+    "id": "bupleurum-complex-capsule",
+    "category": "sleep-stress",
+    "categoryName": "Sleep & Stress",
+    "name": "BUPLEURUM COMPLEX CAPSULE",
+    "chineseName": "柴胡复方",
+    "price": 180,
+    "image": "images/Products/S/Malaysia_柴胡复方.png",
+    "license": "MAL24076049TC"
+  },
+  {
+    "id": "cordyceps-rhodiola-rosea-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "CORDYCEPS RHODIOLA ROSEA CAPSULE",
+    "chineseName": "虫草红景天",
+    "price": 180,
+    "image": "images/Products/D/马来西亚_虫草红景天 Cordyceps Rhodiola Rosea.png",
+    "license": "MAL24066103TC"
+  },
+  {
+    "id": "cough-ease-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "COUGH EASE CAPSULE",
+    "chineseName": "舒咳宁",
+    "price": 150,
+    "image": "images/Products/D/马来西亚_舒咳宁 Cough Ease Capsule.png",
+    "license": "MAL24076070TC"
+  },
+  {
+    "id": "v-strength-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "V-STRENGTH CAPSULE",
+    "chineseName": "滋肾源",
+    "price": 160,
+    "image": "images/Products/D/马来西亚_滋肾源 V-Strength Capsule.png",
+    "license": "MAL24066102TC"
+  },
+  {
+    "id": "womens-treasure-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "WOMEN'S TREASURE CAPSULE",
+    "chineseName": "女人宝",
+    "price": 200,
+    "image": "",
+    "license": "MAL24076050TC"
+  },
+  {
+    "id": "revital-essence-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "REVITAL ESSENCE CAPSULE",
+    "chineseName": "养元复气胶囊",
+    "price": 250,
+    "image": "images/Products/D/马来西亚_养元复气 Revital Essence.png",
+    "license": "MAL24066104TC"
+  },
+  {
+    "id": "eye-health-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "EYE HEALTH CAPSULE",
+    "chineseName": "明眸胶囊",
+    "price": 160,
+    "image": "images/Products/D/马来西亚_明眸胶囊 Eye Health Capsule.png",
+    "license": "MAL24036091TC"
+  },
+  {
+    "id": "aloe-prebiotic",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "ALOE PREBIOTIC",
+    "chineseName": "芦荟益生原",
+    "price": 230,
+    "image": "images/Products/D/Aloe_Prebiotic.png",
+    "license": "MALXXXXXXXXTC"
+  },
+  {
+    "id": "grape-seed-extract-300mg",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "GRAPE SEED EXTRACT 300MG CAPSULE",
+    "chineseName": "葡萄籽萃取物胶囊",
+    "price": 130,
+    "image": "images/Products/D/Grape_Seed_Extract_300mg.png",
+    "license": "MAL26106132TC"
+  },
+  {
+    "id": "harmony-wellness-capsule",
+    "category": "daily-vitality",
+    "categoryName": "Daily Vitality",
+    "name": "HARMONY WELLNESS CAPSULE",
+    "chineseName": "疏养方",
+    "price": 160,
+    "image": "images/Products/D/Harmony_Wellness_Capsule.png",
+    "license": "MALXXXXXXXXTC"
+  }
 ];
 
 window.herbProductDetails = Object.freeze({
@@ -35,14 +215,14 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adult: 1 capsule once per day after meal. Or as directed by a doctor or pharmacist.",
-      "成人：饭后服用，每日 1次，每次 1粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日 1次，每次1粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
-      "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
+      "Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
       "孕妇禁用；哺乳期妇女缺乏可靠的安全数据。",
-      "2. This is a traditional medicine. Consult a doctor or pharmacist if your symptoms persist or worsen.",
+      "This is a traditional medicine. Consult a doctor or pharmacist if your symptoms persist or worsen.",
       "此为传统药物，若症状持续或恶化，请务必咨询医生或药剂师。",
-      "3. Keep out of reach of children. Store below 30°C, protect from light and moisture, and ensure the bottle is closed tightly after opening.",
+      "Keep out of reach of children. Store below 30°C, protect from light and moisture, and ensure the bottle is closed tightly after opening.",
       "请置于儿童接触不到的地方。存放于30°C以下，注意避光防潮，每次开封使用后请将瓶盖拧紧。"
     ]
   },
@@ -62,7 +242,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: Take 2 capsules once a day after meal. Or as directed by a doctor or pharmacist.",
-      "成人：饭后服用，每日 1次，每次 2粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日 1次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Consult a doctor or pharmacist before taking this traditional medicine, and keep it out of reach of children.",
@@ -89,7 +269,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: Take 2-3 vegetable capsules after meal, twice a day. Or as directed by a doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次 2-3粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次2-3粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. This product contains propolis, which can cause severe or fatal allergic reactions. Asthma and allergy sufferers are at a higher risk.",
@@ -114,7 +294,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: 3 capsules 2 times a day after meal. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次3粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次3粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -153,7 +333,7 @@ window.herbProductDetails = Object.freeze({
       "Traditionally used to reduce phlegm. 传统上用于化痰。"
     ],
     "dosage": [
-      "Adults: Take 3-4 capsules after meal, twice a day. Or as directed by doctor or pharmacist. 成人：饭后服用，每日 2次，每次 3-4粒。或遵医生或药剂师嘱咐。"
+      "Adults: Take 3-4 capsules after meal, twice a day. Or as directed by doctor or pharmacist. 成人：饭后服用，每日2次，每次3-4粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -179,7 +359,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: Take 2 vegetable capsules after meal, twice a day. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次2粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -208,7 +388,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: 3-4 vegetable capsules after meal, twice a day. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次 3-4粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次3-4粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated for pregnant women. Safe use for lactating women and children has not been established.",
@@ -239,10 +419,11 @@ window.herbProductDetails = Object.freeze({
       "Source of Capsule: Vegetable. 植物胶囊"
     ],
     "function": [
-      "Traditionally used for women's health. 传统上用于女性健康。"
+      "Traditionally used for women's health, relief of menstrual pain, vaginal discharge and to improve menstrual flow.",
+      "传统上用于女性健康、缓解经痛、调理女性分泌物，以及改善经血排出。"
     ],
     "dosage": [
-      "Adults: Take 2 capsules each time, twice a day after meal. Or as directed by doctor or pharmacist. 成人：饭后服用，每日 2次，每次 2粒。或遵医生或药剂师嘱咐。"
+      "Adults: Take 2 capsules each time, twice a day after meal. Or as directed by doctor or pharmacist. 成人：饭后服用，每日2次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -266,7 +447,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: Take 2 capsules each time, twice a day after meal. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次2粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated for pregnant women. Safe use for lactating women and children has not been established.",
@@ -318,7 +499,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adult: Take 1 vegetable capsule after meal, twice a day. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次1粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次1粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. This product contains natural lovastatin. Strictly do not use if you are already taking statins. Avoid concurrent use with fibrates, as it may cause severe muscle issues (myositis) and kidney-related risks (myoglobinuria).",
@@ -331,7 +512,7 @@ window.herbProductDetails = Object.freeze({
       "服用此传统药物前请咨询医生或药剂师，并置于儿童接触不到的地方。存放于30°C以下，注意避光防潮，每次开封使用后请将瓶盖拧紧。"
     ]
   },
-  "mu-gua-guan-jie-capsule": {
+  "long-mu-jiang-huang-plus": {
     "ingredients": [
       "Each capsule 300mg contains:",
       "Fructus Chaenomeles Speciosa Extract 木瓜 21.25mg",
@@ -353,7 +534,7 @@ window.herbProductDetails = Object.freeze({
       "Traditionally used for women's health. 传统上用于女性健康。"
     ],
     "dosage": [
-      "Adults: Take 3 capsules each time, twice a day after meal. Or as directed by a doctor or pharmacist. 成人：饭后服用，每日 2次，每次3粒。或遵医生或药剂师嘱咐。"
+      "Adults: Take 3 capsules each time, twice a day after meal. Or as directed by a doctor or pharmacist. 成人：饭后服用，每日2次，每次3粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -419,7 +600,7 @@ window.herbProductDetails = Object.freeze({
       "Traditionally used to relief pain. 传统上用于止痛"
     ],
     "dosage": [
-      "Adults: 2 capsules to be taken after meal, twice a day. Or as directed by doctor or pharmacist. 成人：饭后服用，每日 2次，每次2粒。或遵医生或药剂师嘱咐。"
+      "Adults: 2 capsules to be taken after meal, twice a day. Or as directed by doctor or pharmacist. 成人：饭后服用，每日2次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -443,7 +624,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: 2 capsules after meal, twice a day. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次2粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -499,7 +680,7 @@ window.herbProductDetails = Object.freeze({
       "Traditionally used for sleep difficulty. 传统上用于睡眠困难。"
     ],
     "dosage": [
-      "Adult: Take 2 capsules each time, twice a day after meal. Or as directed by doctor or pharmacist. 成人：饭后服用，每日 2次，每次2粒。或遵医生或药剂师嘱咐。"
+      "Adult: Take 2 capsules each time, twice a day after meal. Or as directed by doctor or pharmacist. 成人：饭后服用，每日2次，每次2粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. This product contains berberine. Strictly do not use for babies, children under 12 years of age, pregnant women, or lactating mothers.",
@@ -534,7 +715,7 @@ window.herbProductDetails = Object.freeze({
       "Traditionally used for general health. 传统上用于一般健康。"
     ],
     "dosage": [
-      "Adults: Take 3-4 capsules after meal, twice a day. Or as directed by doctor or pharmacist. 成人：饭后服用，每日 2次，每次3-4粒。或遵医生或药剂师嘱咐。"
+      "Adults: Take 3-4 capsules after meal, twice a day. Or as directed by doctor or pharmacist. 成人：饭后服用，每日2次，每次3-4粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -568,7 +749,7 @@ window.herbProductDetails = Object.freeze({
     ],
     "dosage": [
       "Adults: 3 capsules to be taken, twice a day after meal. Or as directed by doctor or pharmacist.",
-      "成人：饭后服用，每日 2次，每次3粒。或遵医生或药剂师嘱咐。"
+      "成人：饭后服用，每日2次，每次3粒。或遵医生或药剂师嘱咐。"
     ],
     "additional": [
       "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
@@ -580,9 +761,30 @@ window.herbProductDetails = Object.freeze({
     ]
   },
   "harmony-wellness-capsule": {
-    "ingredients": [],
-    "function": [],
-    "dosage": [],
-    "additional": []
+    "ingredients": [
+      "Each 320mg vegetable capsule contains:",
+      "Semen Silybum Marianum Extract 水飞蓟 50mg",
+      "Fructus Ligustrum Lucidum Extract 女贞子 50mg",
+      "Fructus Lycium Barbarum Extract 枸杞子 30mg",
+      "Fructus Schisandra Chinensis Extract 五味子 50mg",
+      "Coriolus Versicolor Fruiting Body Extract 云芝 20mg",
+      "Radix Curcuma Longa Extract 姜黄 50mg",
+      "Source of Capsule: Vegetable. 植物胶囊"
+    ],
+    "function": [
+      "Traditionally used for general health maintenance. 传统上用于维持身体健康。"
+    ],
+    "dosage": [
+      "Adults: 1 capsule to be taken, twice a day after meal. Or as directed by doctor or pharmacist.",
+      "成人：饭后服用，每日2次，每次1粒。或遵医生或药剂师嘱咐。"
+    ],
+    "additional": [
+      "1. Contraindicated (strictly do not use) for pregnant women; insufficient safety data for breastfeeding women.",
+      "孕妇禁用；哺乳期妇女缺乏可靠的安全数据。",
+      "2. This is a traditional medicine. Consult a doctor or pharmacist if your symptoms persist or worsen.",
+      "此为传统药物，若症状持续或恶化，请务必咨询医生或药剂师。",
+      "3. Keep out of reach of children. Store below 30°C, protect from light and moisture, and ensure the bottle is closed tightly after opening.",
+      "请置于儿童接触不到的地方。存放于30°C以下，注意避光防潮，每次开封使用后请将瓶盖拧紧。"
+    ]
   }
 });
