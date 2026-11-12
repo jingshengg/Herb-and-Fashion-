@@ -4,14 +4,14 @@
   if (!gallery || !stage) return;
 
   const categoryNames = [
-    { en: "Immunity & Respiratory Health", enLines: ["Immunity &", "Respiratory Health"], zh: "免疫与呼吸道健康", zhLines: ["免疫与呼吸道", "健康"], image: "Immunity & Respiratory Health.jpg" },
-    { en: "Kidney, Liver & Reproductive Health", enLines: ["Kidney, Liver &", "Reproductive Health"], zh: "肝肾与生殖健康", zhLines: ["肝肾与生殖", "健康"], image: "Kidney, Liver & Reproductive Health.jpg" },
+    { en: "Immunity & Respiratory Health", enLines: ["Immunity &", "Respiratory Health"], zh: "免疫与呼吸道健康", zhLines: ["免疫与呼吸道健康"], image: "Immunity & Respiratory Health.jpg" },
+    { en: "Kidney, Liver & Reproductive Health", enLines: ["Kidney, Liver &", "Reproductive Health"], zh: "肝肾与生殖健康", zhLines: ["肝肾与生殖健康"], image: "Kidney, Liver & Reproductive Health.jpg" },
     { en: "Cardiovascular & Three-Highs Support", enLines: ["Cardiovascular &", "Three-Highs Support"], zh: "心血管与三高调理", zhLines: ["心血管与三高", "调理"], image: "Cardiovascular & Three-Highs Support.jpg" },
     { en: "Bone, Joint & Mobility Health", enLines: ["Bone, Joint &", "Mobility Health"], zh: "骨关节与活动力健康", zhLines: ["骨关节与活动力", "健康"], image: "Bone, Joint & Mobility Health.jpg" },
-    { en: "Digestive & Metabolic Health", enLines: ["Digestive &", "Metabolic Health"], zh: "消化与代谢健康", zhLines: ["消化与代谢", "健康"], image: "Digestive & Metabolic Health.jpg" },
+    { en: "Digestive & Metabolic Health", enLines: ["Digestive &", "Metabolic Health"], zh: "消化与代谢健康", zhLines: ["消化与代谢健康"], image: "Digestive & Metabolic Health.jpg" },
     { en: "Eye, Skin & Antioxidant Care", enLines: ["Eye, Skin &", "Antioxidant Care"], zh: "眼部、肌肤与抗氧化护理", zhLines: ["眼部、肌肤与", "抗氧化护理"], image: "Eye, Skin & Antioxidant Care.jpg" },
     { en: "Mood, Stress & Sleep Support", enLines: ["Mood, Stress &", "Sleep Support"], zh: "情绪、压力与睡眠管理", zhLines: ["情绪、压力与", "睡眠管理"], image: "Mood, Stress & Sleep Support.jpg" },
-    { en: "Healthy Wellness Drink Mixes", enLines: ["Healthy Wellness", "Drink Mixes"], zh: "健康养生冲饮", zhLines: ["健康养生", "冲饮"], image: "Healthy Wellness Drink Mixes.jpg" }
+    { en: "Healthy Wellness Drink Mixes", enLines: ["Healthy Wellness", "Drink Mixes"], zh: "健康养生冲饮", zhLines: ["健康养生冲饮"], image: "Healthy Wellness Drink Mixes.jpg" }
   ];
 
   const cards = [...stage.querySelectorAll("[data-category-card]")];

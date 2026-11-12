@@ -71,18 +71,25 @@
       <div class="container">
         <header class="partners-heading">
           <h2 id="partners-title">Our Partners</h2>
+          <p class="partners-intro">Select your region to find retailers and pharmacies carrying our products.</p>
         </header>
+        <div class="partner-region-filters" role="group" aria-label="Filter partners by region">
+          <button type="button" class="partner-region-button" data-region="klang-valley" aria-pressed="false">Klang Valley</button>
+          <button type="button" class="partner-region-button" data-region="johor" aria-pressed="false">Johor</button>
+          <button type="button" class="partner-region-button" data-region="sarawak" aria-pressed="false">Sarawak</button>
+        </div>
         <div class="partner-carousel" data-partner-carousel role="region" aria-roledescription="carousel" aria-label="Partner logos">
           <div class="partner-viewport" data-partner-viewport>
             <div class="partner-track" data-partner-track role="list">
-              <div class="partner-item" role="listitem"><img src="images/our%20partners/bio-health-cmc.png" alt="Bio Health Chinese Medical Centre logo"></div>
-              <div class="partner-item" role="listitem"><img src="images/our%20partners/bio-modern-herbs.png" alt="Bio Modern Herbs logo"></div>
-              <div class="partner-item" role="listitem"><img src="images/our%20partners/peter-chinese-medical.png" alt="Peter Chinese Medical logo"></div>
-              <div class="partner-item" role="listitem"><img src="images/our%20partners/sing-lee-pharmacy.png" alt="Sing Lee Pharmacy logo"></div>
-              <div class="partner-item" role="listitem"><img src="images/our%20partners/unicare-pharmacy.png" alt="Unicare Pharmacy logo"></div>
-              <div class="partner-item" role="listitem"><img src="images/our%20partners/green-house.png" alt="Green House of Natural Food logo"></div>
+              <a class="partner-item" role="listitem" data-partner="bio-health-cmc" data-regions="sarawak" href="partner-details.html?partner=bio-health-cmc"><img src="images/our%20partners/bio-health-cmc.png" alt="Bio Health Chinese Medical Centre logo"></a>
+              <a class="partner-item" role="listitem" data-partner="bio-modern-herbs" data-regions="johor" href="partner-details.html?partner=bio-modern-herbs"><img src="images/our%20partners/bio-modern-herbs.png" alt="Bio Modern Herbs Sdn. Bhd. logo"></a>
+              <a class="partner-item" role="listitem" data-partner="peter-chinese-medical" data-regions="sarawak" href="partner-details.html?partner=peter-chinese-medical"><img src="images/our%20partners/peter-chinese-medical.png" alt="Peter Chinese Medical Hall logo"></a>
+              <a class="partner-item" role="listitem" data-partner="sing-lee-pharmacy" data-regions="sarawak" href="partner-details.html?partner=sing-lee-pharmacy"><img src="images/our%20partners/sing-lee-pharmacy.png" alt="Sing Lee Pharmacy logo"></a>
+              <a class="partner-item" role="listitem" data-partner="unicare-pharmacy" data-regions="sarawak" href="partner-details.html?partner=unicare"><img src="images/our%20partners/unicare-pharmacy.png" alt="Unicare Pharmacy logo"></a>
+              <a class="partner-item" role="listitem" data-partner="greenhouse" data-regions="johor" href="partner-details.html?partner=greenhouse"><img src="images/our%20partners/green-house.png" alt="Greenhouse logo"></a>
             </div>
           </div>
+          <p class="partner-empty-state" data-partner-empty hidden></p>
         </div>
       </div>
     </section>

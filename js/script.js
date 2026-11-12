@@ -167,6 +167,18 @@ document.addEventListener('keydown', (event) => {
     "We demystify Traditional Chinese Medicine for modern audiences through compelling storytelling. Supported by a robust omni-channel distribution network and consumer education, we effectively connect premium health solutions with today's consumers.": '我们通过引人入胜的品牌故事，将深奥的传统中医概念转化为现代受众易于共鸣和理解的语言。依托强大的全渠道分销网络与消费者教育，我们有效地将优质健康解决方案与当今消费者连接起来。',
     'Our Offices': '我们的公司',
     'Our Partners': '我们的合作伙伴',
+    'Select your region to find retailers and pharmacies carrying our products.': '请选择您所在的地区，查看有售本公司产品的零售商与药剂行。',
+    'Klang Valley': '巴生谷',
+    'Johor': '柔佛',
+    'Sarawak': '砂拉越',
+    'Coming Soon': '即将推出',
+    'Partner Information': '合作伙伴信息',
+    'Back to Our Partners': '返回合作伙伴列表',
+    'Branch': '分行',
+    'Address': '地址',
+    'Operating Hours': '营业时间',
+    'Contact': '联系电话',
+    'Partner information will be available soon.': '合作伙伴资料将于稍后提供。',
     'Johor Office': '柔佛分行',
     'Selangor Office': '雪兰莪分行',
     'Sarawak Office': '砂拉越分行',
@@ -181,9 +193,9 @@ document.addEventListener('keydown', (event) => {
     'Message': '留言内容',
     'Send Enquiry': '提交咨询',
     'The Power of Herbs, The Beauty of Traditional Chinese Medicine.': '以草本之力，还中医之美',
-    'Herbal & Fashion Sdn. Bhd. is a dedicated distributor of premium health and wellness solutions, expanded from its parent company in Singapore. Founded in Singapore in 2005, the brand has built a trusted reputation in modern health supplementation and traditional herbal wisdom. To meet growing regional demand, the company officially expanded to Malaysia in 2011, establishing Herbal & Fashion Sdn. Bhd. to bring high-quality health solutions to the local market.': 'Herbal & Fashion Sdn. Bhd. 是专注于分销高端健康与养生解决方案的专业企业，由其新加坡母公司拓展而来。该品牌于2005年在新加坡创立，在现代健康补充剂和传统草本智慧领域建立了值得信赖的声誉。为满足日益增长的区域需求，公司于2011年正式进军马来西亚市场，成立了Herbal & Fashion Sdn. Bhd.，旨在为当地带来高品质的健康解决方案。',
+    'Herb & Fashion Sdn. Bhd. is a dedicated distributor of premium health and wellness solutions, expanded from its parent company in Singapore. Founded in Singapore in 2005, the brand has built a trusted reputation in modern health supplementation and traditional herbal wisdom. To meet growing regional demand, the company officially expanded to Malaysia in 2011, establishing Herb & Fashion Sdn. Bhd. to bring high-quality health solutions to the local market.': 'Herb & Fashion Sdn. Bhd. 是专注于分销高端健康与养生解决方案的专业企业，由其新加坡母公司拓展而来。该品牌于2005年在新加坡创立，在现代健康补充剂和传统草本智慧领域建立了值得信赖的声誉。为满足日益增长的区域需求，公司于2011年正式进军马来西亚市场，成立了Herb & Fashion Sdn. Bhd.，旨在为当地带来高品质的健康解决方案。',
     'With the brand\'s production infrastructure anchored in Singapore, the Malaysian company functions as a dedicated distribution, business development, and regulatory pipeline. It operates as the sole importer and distributor of the premium herbal formulations and Traditional Chinese Medicine (TCM) nutrition products produced by its parent manufacturing wing. All products distributed by the Malaysian entity are actively manufactured under strict Good Manufacturing Practice (GMP) standards in Singapore.': '该品牌的生产基础设施以新加坡为基地，而这家马来西亚公司则专门负责分销、业务拓展及监管事务。该公司是其母公司生产的高端草本制剂和中医（TCM）营养产品的唯一进口商和分销商。该马来西亚实体分销的所有产品均严格遵循新加坡的《良好生产规范》（GMP）标准进行生产。',
-    'To make these trusted formulations highly accessible, Herbal & Fashion Sdn. Bhd. has strategically grown its local footprint. The company\'s active distribution network currently covers key regions including Johor and Kuala Lumpur, and has recently expanded its reach to Sarawak. Through this ongoing domestic growth, Herbal & Fashion Sdn. Bhd. aims to provide better services, efficient product delivery, and dedicated health support to customers and practitioners across Malaysia.': '为了让这些值得信赖的产品配方更易于获取，Herbal & Fashion Sdn. Bhd. 通过战略布局扩大了其在当地的市场覆盖范围。该公司活跃的分销网络目前覆盖了柔佛和吉隆坡等主要地区，并最近将业务范围扩展至砂拉越。通过这一持续的国内业务扩张，Herbal & Fashion Sdn. Bhd. 致力于为马来西亚各地的客户和从业者提供更优质的服务、高效的产品配送以及专业的健康支持。',
+    'To make these trusted formulations highly accessible, Herb & Fashion Sdn. Bhd. has strategically grown its local footprint. The company\'s active distribution network currently covers key regions including Johor and Kuala Lumpur, and has recently expanded its reach to Sarawak. Through this ongoing domestic growth, Herb & Fashion Sdn. Bhd. aims to provide better services, efficient product delivery, and dedicated health support to customers and practitioners across Malaysia.': '为了让这些值得信赖的产品配方更易于获取，Herb & Fashion Sdn. Bhd. 通过战略布局扩大了其在当地的市场覆盖范围。该公司活跃的分销网络目前覆盖了柔佛和吉隆坡等主要地区，并最近将业务范围扩展至砂拉越。通过这一持续的国内业务扩张，Herb & Fashion Sdn. Bhd. 致力于为马来西亚各地的客户和从业者提供更优质的服务、高效的产品配送以及专业的健康支持。',
     'OUR DIRECTION': '我们的方向',
     'What guides us': '指引我们的理念',
     'Mission': '使命',
@@ -248,7 +260,9 @@ document.addEventListener('keydown', (event) => {
     'More product information': '更多产品信息',
     'Taking you to': '正在前往',
     'Open menu': '打开菜单',
-    'Close address': '关闭地址'
+    'Close address': '关闭地址',
+    'Filter partners by region': '按地区筛选合作伙伴',
+    'Partner logos': '合作伙伴标志'
   }));
 
   const attributeTranslations = {
@@ -287,13 +301,14 @@ document.addEventListener('keydown', (event) => {
     'products.html': 'Herb and Fashion Malaysia Official Website',
     'faq.html': '常见问题 | Herb and Fashion Malaysia Official Website',
     'services.html': 'Herb and Fashion Malaysia Official Website',
+    'partner-details.html': '合作伙伴信息 | Herb and Fashion Malaysia Official Website',
     'events.html': 'Herb and Fashion Malaysia Official Website',
     'contact.html': 'Herb and Fashion Malaysia Official Website',
     'product-detail.html': 'Herb and Fashion Malaysia Official Website'
   };
 
   const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim();
-  const ignoredTextRegion = '.brand, .footer-wordmark, address, .language-toggle, .product-category-filters, .product-grid, .product-bilingual-content, .product-shopee-fab';
+  const ignoredTextRegion = '.brand, .footer-wordmark, address, .language-toggle, .product-category-filters, .product-grid, .product-bilingual-content, .product-shopee-fab, .services-preview .service-item h3, [data-partner-title]';
   const translatedElements = [...document.body.querySelectorAll('*')]
     .filter((element) => !element.closest(ignoredTextRegion))
     .map((element) => ({ element, source: normalize(element.textContent) }))
@@ -353,12 +368,12 @@ document.addEventListener('keydown', (event) => {
           const translatedLead = textTranslations.get(source);
           const companyName = document.createElement('span');
           companyName.className = 'company-name-highlight';
-          companyName.append(document.createTextNode('Herbal '));
+          companyName.append(document.createTextNode('Herb '));
           const ampersand = document.createElement('span');
           ampersand.className = 'plain-amp';
           ampersand.textContent = '&';
           companyName.append(ampersand, document.createTextNode(' Fashion Sdn. Bhd.'));
-          element.replaceChildren(companyName, document.createTextNode(translatedLead.slice('Herbal & Fashion Sdn. Bhd.'.length)), ...decorative);
+          element.replaceChildren(companyName, document.createTextNode(translatedLead.slice('Herb & Fashion Sdn. Bhd.'.length)), ...decorative);
         } else if (element.matches('.office-entry h4')) {
           element.replaceChildren(...decorative, document.createTextNode(textTranslations.get(source)));
         } else {
@@ -420,23 +435,34 @@ document.addEventListener('keydown', (event) => {
 })();
 
 
-// Partner logos pause between each gentle one-slot slide and loop seamlessly.
+// Partner rail autoplays until one or more regions are selected. Filtered
+// results become a static, responsive logo grid so every link stays easy to use.
 const partnerCarousel = document.querySelector('[data-partner-carousel]');
 if (partnerCarousel) {
   const viewport = partnerCarousel.querySelector('[data-partner-viewport]');
   const track = partnerCarousel.querySelector('[data-partner-track]');
-  const originalSlides = [...track.children];
+  const items = [...track.querySelectorAll('[data-partner]')];
+  const regionButtons = [...document.querySelectorAll('[data-region]')];
+  const emptyState = partnerCarousel.querySelector('[data-partner-empty]');
   const visibleSlides = 5;
+  const selectedRegions = new Set();
+  const clones = items.slice(0, visibleSlides).map((item) => {
+    const clone = item.cloneNode(true);
+    clone.removeAttribute('href');
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('img').forEach((image) => { image.alt = ''; });
+    clone.setAttribute('tabindex', '-1');
+    return clone;
+  });
   let currentSlide = 0;
   let timer = null;
   let transitionFallback = null;
 
-  originalSlides.slice(0, visibleSlides).forEach((slide) => {
-    const clone = slide.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    clone.querySelectorAll('img').forEach((image) => { image.alt = ''; });
-    track.append(clone);
-  });
+  const clearAdvanceTimer = () => {
+    window.clearTimeout(timer);
+    timer = null;
+    window.clearTimeout(transitionFallback);
+  };
 
   const setPosition = (animate = true) => {
     if (!animate) track.style.transition = 'none';
@@ -450,19 +476,14 @@ if (partnerCarousel) {
     }
   };
 
-  const clearAdvanceTimer = () => {
-    window.clearTimeout(timer);
-    timer = null;
-  };
-
   const scheduleNextSlide = () => {
     clearAdvanceTimer();
-    if (document.hidden) return;
+    if (document.hidden || selectedRegions.size) return;
     timer = window.setTimeout(advanceSlide, 4000);
   };
 
   const advanceSlide = () => {
-    if (document.hidden) return;
+    if (document.hidden || selectedRegions.size) return;
     currentSlide += 1;
     setPosition(true);
     let finished = false;
@@ -471,7 +492,7 @@ if (partnerCarousel) {
       finished = true;
       window.clearTimeout(transitionFallback);
       track.removeEventListener('transitionend', onTransitionEnd);
-      if (currentSlide >= originalSlides.length) {
+      if (currentSlide >= items.length) {
         currentSlide = 0;
         setPosition(false);
       }
@@ -484,17 +505,62 @@ if (partnerCarousel) {
     transitionFallback = window.setTimeout(finishTransition, 1300);
   };
 
-  setPosition(false);
-  window.requestAnimationFrame(() => {
+  const render = () => {
+    const filtering = selectedRegions.size > 0;
+    clearAdvanceTimer();
+    partnerCarousel.classList.toggle('is-filtered', filtering);
+    regionButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(selectedRegions.has(button.dataset.region)));
+    });
+
+    if (filtering) {
+      clones.forEach((clone) => clone.remove());
+      track.style.transform = 'none';
+      track.style.removeProperty('--partner-slide-width');
+      items.forEach((item) => {
+        const itemRegions = (item.dataset.regions || '').split(/\s+/).filter(Boolean);
+        item.hidden = !itemRegions.some((region) => selectedRegions.has(region));
+      });
+      const hasKlangValley = selectedRegions.has('klang-valley');
+      if (emptyState) {
+        emptyState.hidden = !hasKlangValley;
+        emptyState.textContent = document.documentElement.dataset.language === 'zh'
+          ? '巴生谷合作伙伴信息即将公布。'
+          : 'Klang Valley partners coming soon.';
+      }
+      return;
+    }
+
+    items.forEach((item) => { item.hidden = false; });
+    if (emptyState) emptyState.hidden = true;
+    clones.forEach((clone) => track.append(clone));
+    currentSlide = 0;
     setPosition(false);
     scheduleNextSlide();
-  });
+  };
+
+  regionButtons.forEach((button) => button.addEventListener('click', () => {
+    const region = button.dataset.region;
+    if (selectedRegions.has(region)) selectedRegions.delete(region);
+    else selectedRegions.add(region);
+    render();
+  }));
+
+  setPosition(false);
+  window.requestAnimationFrame(() => { setPosition(false); scheduleNextSlide(); });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) clearAdvanceTimer();
     else scheduleNextSlide();
   });
-  window.addEventListener('resize', () => setPosition(false), { passive: true });
-  window.addEventListener('load', () => setPosition(false), { once: true });
+  window.addEventListener('resize', () => { if (!selectedRegions.size) setPosition(false); }, { passive: true });
+  window.addEventListener('load', () => { if (!selectedRegions.size) setPosition(false); }, { once: true });
+  window.addEventListener('herb-language-change', () => {
+    if (selectedRegions.size && emptyState && selectedRegions.has('klang-valley')) {
+      emptyState.textContent = document.documentElement.dataset.language === 'zh'
+        ? '巴生谷合作伙伴信息即将公布。'
+        : 'Klang Valley partners coming soon.';
+    }
+  });
 }
 // Render every visible ampersand in one consistent Times New Roman face,
 // including content inserted later by product rendering and language changes.

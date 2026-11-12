@@ -32,7 +32,7 @@
     point.classList.add("is-settled");
     updateCurrentPoint();
     updateTimeline();
-    updateCta(window.innerHeight * 0.72);
+    updateCta();
   }
 
   points.forEach((point) => {
@@ -65,30 +65,22 @@
   }
 
   function updateTimeline() {
-    const currentIndex = points.findLastIndex
-      ? points.findLastIndex((point) => point.classList.contains("is-settled") && point.classList.contains("is-revealed"))
-      : (() => {
-          for (let index = points.length - 1; index >= 0; index -= 1) {
-            if (points[index].classList.contains("is-settled") && points[index].classList.contains("is-revealed")) return index;
-          }
-          return -1;
-        })();
+    if (railLength <= 1) return;
 
-    if (currentIndex < 0 || railLength <= 1) {
-      fill.style.height = "0%";
-      return;
-    }
-
-    const listRect = list.getBoundingClientRect();
-    const pointRect = points[currentIndex].getBoundingClientRect();
-    const center = pointRect.top + pointRect.height / 2 - listRect.top;
-    const progress = Math.max(0, Math.min(100, ((center - railStart) / railLength) * 100));
-    fill.style.height = `${progress}%`;
+    // Keep the rail tied to the scroll position instead of snapping between settled points.
+    const firstRect = points[0].getBoundingClientRect();
+    const lastRect = points[points.length - 1].getBoundingClientRect();
+    const firstCenter = firstRect.top + firstRect.height / 2;
+    const lastCenter = lastRect.top + lastRect.height / 2;
+    const triggerLine = window.innerHeight * 0.72;
+    const span = Math.max(1, lastCenter - firstCenter);
+    const progress = Math.max(0, Math.min(1, (triggerLine - firstCenter) / span));
+    fill.style.transform = `scaleY(${progress})`;
   }
 
-  function updateCta(triggerLine) {
+  function updateCta() {
     const allSettled = points.every((point) => point.classList.contains("is-settled") && point.classList.contains("is-revealed"));
-    const shouldShow = allSettled && cta.getBoundingClientRect().top <= triggerLine;
+    const shouldShow = allSettled;
     cta.classList.toggle("is-visible", shouldShow);
     cta.setAttribute("aria-hidden", String(!shouldShow));
     const link = cta.querySelector("a");
@@ -102,20 +94,18 @@
     const triggerLine = window.innerHeight * 0.72;
     let stateChanged = false;
 
-    points.forEach((point, index) => {
+    points.forEach((point) => {
       const top = point.getBoundingClientRect().top;
       const isRevealed = point.classList.contains("is-revealed");
-      const priorPointsSettled = points.slice(0, index).every((prior) =>
-        prior.classList.contains("is-settled") && prior.classList.contains("is-revealed")
-      );
 
-      if (!isRevealed && priorPointsSettled && top <= triggerLine) {
+      // Reveal each item at its own viewport threshold; fast scrolls must not queue them.
+      if (!isRevealed && top <= triggerLine) {
         point.classList.add("is-revealed");
         point.setAttribute("aria-hidden", "false");
         clearSettleTimer(point);
-        settleTimers.set(point, window.setTimeout(() => markSettled(point), 950));
+        settleTimers.set(point, window.setTimeout(() => markSettled(point), 650));
         stateChanged = true;
-      } else if (isRevealed && (!priorPointsSettled || top > triggerLine + 34)) {
+      } else if (isRevealed && top > triggerLine + 34) {
         point.classList.remove("is-revealed", "is-settled", "is-current");
         point.setAttribute("aria-hidden", "true");
         clearSettleTimer(point);
@@ -123,11 +113,9 @@
       }
     });
 
-    if (stateChanged) {
-      updateCurrentPoint();
-      updateTimeline();
-    }
-    updateCta(triggerLine);
+    if (stateChanged) updateCurrentPoint();
+    updateTimeline();
+    updateCta();
   }
 
   function requestRender() {

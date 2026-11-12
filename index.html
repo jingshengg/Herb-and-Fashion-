@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/page-intro.css">
   <link rel="stylesheet" href="css/category-gallery.css">
   <link rel="stylesheet" href="css/category-gallery-waves.css">
+  <link rel="stylesheet" href="css/overview-scroll-story.css">
   <script src="js/page-intro.js"></script>
 </head>
 <body id="top">
@@ -78,26 +79,21 @@
       </div>
     </section>
 
-    <div class="products-services-blend">
-
+    <div class="overview-products-services-story" data-overview-story>
     <!-- Interactive 3D category rail; card structure and carousel behavior remain unchanged. -->
     <section class="section products-preview" aria-labelledby="products-title">
-      <div class="products-preview__waves" data-products-waves aria-hidden="true">
-        <svg class="products-preview__wave-art" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
-          <g class="products-preview__wave-flow">
-            <path class="products-preview__wave-line products-preview__wave-line--main" d="M-80 120 C40 36 150 36 270 120 S500 204 620 120 S850 36 970 120 S1200 204 1320 120 S1540 36 1680 120" />
-            <path class="products-preview__wave-line products-preview__wave-line--echo" d="M-80 290 C55 205 160 208 285 290 S510 374 640 290 S865 208 990 290 S1215 374 1340 290 S1555 208 1680 290" />
-            <path class="products-preview__wave-line products-preview__wave-line--main" d="M-80 475 C35 390 165 388 285 475 S515 560 645 475 S875 390 1000 475 S1225 560 1350 475 S1560 390 1680 475" />
-            <path class="products-preview__wave-line products-preview__wave-line--echo" d="M-80 650 C45 568 170 565 295 650 S525 735 650 650 S885 565 1010 650 S1235 735 1360 650 S1570 565 1680 650" />
-            <path class="products-preview__wave-line products-preview__wave-line--fine" d="M-80 815 C45 735 170 730 295 815 S525 895 650 815 S885 730 1010 815 S1235 895 1360 815 S1570 730 1680 815" />
-          </g>
-        </svg>
-      </div>
-      <div class="container">
-        <div class="section-intro split-heading">
-          <div><h2 id="products-title">Featured Products</h2></div>
-          <p>Combining scientific formulations with trustworthy herbal ingredients, our products deliver high-quality manufacturing that strictly meets regulatory requirements for your peace of mind.</p>
+      <canvas class="products-water-canvas" data-products-water aria-hidden="true"></canvas>
+      <div class="products-intro-track" data-products-intro-track>
+        <div class="products-intro-stage" data-products-intro-stage>
+          <div class="container products-intro-content">
+            <div class="section-intro split-heading products-intro">
+              <div class="products-title-window"><h2 id="products-title" data-products-title>Featured Products</h2></div>
+              <p data-products-tagline>Combining scientific formulations with trustworthy herbal ingredients, our products deliver high-quality manufacturing that strictly meets regulatory requirements for your peace of mind.</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="container products-gallery-area">
         <div class="category-gallery" data-category-gallery role="region" aria-label="Product categories" aria-roledescription="carousel">
           <button class="category-gallery__arrow category-gallery__arrow--previous" type="button" data-gallery-previous aria-label="Previous category"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
           <div class="category-gallery__viewport">
@@ -119,16 +115,23 @@
 
     <!-- Services preview: four specific service headings link onward to the full Services page. -->
     <section class="section services-preview" id="services" aria-labelledby="services-title">
-      <div class="container services-layout">
-        <div class="services-copy"><h2 id="services-title">Our Services</h2></div>
-        <div class="service-list" data-service-list>
-          <div class="service-timeline-rail" aria-hidden="true"><span class="service-timeline-fill" data-service-timeline-fill></span></div>
-          <article class="service-item service-item--left" data-service-point><span class="service-mark"><svg class="service-sticker flask-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="flask-outline" d="M25 7h14M28 7v17L15 46a8 8 0 0 0 7 12h20a8 8 0 0 0 7-12L36 24V7"/><path class="flask-liquid" d="M23 43h18l5 8a3 3 0 0 1-3 4H21a3 3 0 0 1-3-4z"/><path class="flask-wave" d="M22 45c4-3 7 3 11 0s7 2 10 0"/></svg></span><div><h3>Singapore-Origin R&amp;D <span class="plain-amp">&amp;</span> Production</h3></div></article>
-          <article class="service-item service-item--right" data-service-point><span class="service-mark"><img class="service-sticker reference-sticker certificate-sticker" src="images/service-assets/gmp-check-seal.png" alt=""></span><div><h3>Strict GMP Manufacturing Standards</h3></div></article>
-          <article class="service-item service-item--left" data-service-point><span class="service-mark"><svg class="service-sticker regulatory-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="regulatory-shield" d="M32 7 51 14v14c0 13-8 22-19 29-11-7-19-16-19-29V14z"/><path class="regulatory-check" d="m23 32 6 6 13-14"/><path class="regulatory-spark" d="M48 10v-5M54 16h5"/></svg></span><div><h3>MAL Certification <span class="plain-amp">&amp;</span> Compliance</h3></div></article>
-          <article class="service-item service-item--right" data-service-point><span class="service-mark"><svg class="service-sticker marketing-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="marketing-megaphone" d="M10 27h12l25-12v34L22 38H10zM22 38l5 17h9l-6-14"/><path class="marketing-handle" d="M13 27v11"/><path class="marketing-wave" d="M52 23c5 4 5 12 0 16M56 17c9 7 9 21 0 28"/><circle class="marketing-dot" cx="20" cy="32" r="2"/></svg></span><div><h3>Dynamic Branding <span class="plain-amp">&amp;</span> Marketing</h3></div></article>
+      <div class="services-story-stage" data-services-stage>
+        <div class="services-video-surface" aria-hidden="true">
+          <video class="services-background-video" src="images/video/company overview 3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+          <div class="services-video-wash"></div>
         </div>
-        <div class="services-cta" data-services-cta><a class="button button-primary services-learn-more" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+        <div class="container services-story-inner">
+          <div class="services-copy">
+            <h2 id="services-title" data-services-title>Our Services</h2>
+            <div class="services-cta" data-services-cta aria-hidden="true"><a class="services-learn-more" href="services.html" tabindex="-1">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+          </div>
+          <div class="service-list" data-service-list>
+            <article class="service-item service-item--left" data-service-point><span class="service-mark"><svg class="service-sticker flask-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="flask-outline" d="M25 7h14M28 7v17L15 46a8 8 0 0 0 7 12h20a8 8 0 0 0 7-12L36 24V7"/><path class="flask-liquid" d="M23 43h18l5 8a3 3 0 0 1-3 4H21a3 3 0 0 1-3-4z"/><path class="flask-wave" d="M22 45c4-3 7 3 11 0s7 2 10 0"/></svg></span><div><h3><span class="service-typewriter" data-type-en="Singapore-Origin R&amp;D &amp; Production" data-type-zh="新加坡原产研发与制造">Singapore-Origin R&amp;D &amp; Production</span></h3></div></article>
+            <article class="service-item service-item--right" data-service-point><span class="service-mark"><svg class="service-sticker certificate-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="certificate-outline" d="M15 7h25l11 11v27a6 6 0 0 1-6 6H15a6 6 0 0 1-6-6V13a6 6 0 0 1 6-6zM40 7v12h11M18 25h21M18 32h16M18 39h13"/><path class="certificate-accent" d="M36 43a10 10 0 1 0 20 0 10 10 0 1 0-20 0zm10-5 1.8 3.7 4.1.6-3 2.9.7 4.1-3.6-1.9-3.7 1.9.7-4.1-3-2.9 4.1-.6zM39 51l-1 8 7-4 7 4-1-8"/></svg></span><div><h3><span class="service-typewriter" data-type-en="Strict GMP Manufacturing Standards" data-type-zh="严格的GMP生产标准">Strict GMP Manufacturing Standards</span></h3></div></article>
+            <article class="service-item service-item--left" data-service-point><span class="service-mark"><svg class="service-sticker regulatory-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="regulatory-shield" d="M32 7 51 14v14c0 13-8 22-19 29-11-7-19-16-19-29V14z"/><path class="regulatory-check" d="m23 32 6 6 13-14"/><path class="regulatory-spark" d="M48 10v-5M54 16h5"/></svg></span><div><h3><span class="service-typewriter" data-type-en="MAL Certification &amp; Compliance" data-type-zh="MAL认证与法规合规">MAL Certification &amp; Compliance</span></h3></div></article>
+            <article class="service-item service-item--right" data-service-point><span class="service-mark"><svg class="service-sticker marketing-sticker" viewBox="0 0 64 64" aria-hidden="true"><path class="marketing-megaphone" d="M10 27h12l25-12v34L22 38H10zM22 38l5 17h9l-6-14"/><path class="marketing-handle" d="M13 27v11"/><path class="marketing-wave" d="M52 23c5 4 5 12 0 16M56 17c9 7 9 21 0 28"/><circle class="marketing-dot" cx="20" cy="32" r="2"/></svg></span><div><h3><span class="service-typewriter" data-type-en="Dynamic Branding &amp; Marketing" data-type-zh="品牌打造与市场营销">Dynamic Branding &amp; Marketing</span></h3></div></article>
+          </div>
+        </div>
       </div>
     </section>
     </div>
@@ -224,6 +227,8 @@
   <script src="js/category-gallery.js"></script>
   <script src="js/category-gallery-waves.js"></script>
   <script src="js/contact-mint-shader.js"></script>
-  <script src="js/services-timeline.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="js/overview-scroll-story.js"></script>
 </body>
 </html>

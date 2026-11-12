@@ -67,16 +67,17 @@
       float bottomBlend = smoothstep(0.76, 1.0, fromTop);
       float edgeBlend = smoothstep(0.0, 0.16, min(fromTop, fromBottom));
       vec3 cream = vec3(0.969, 0.957, 0.925);
-      vec3 warmPaper = vec3(0.937, 0.922, 0.875);
+      vec3 warmPaper = vec3(0.941, 0.910, 0.859);
       vec3 footerPaper = vec3(0.894, 0.871, 0.812);
-      vec3 seaGlass = vec3(0.843, 0.906, 0.835);
-      vec3 paleMint = vec3(0.765, 0.851, 0.800);
+      vec3 seaGlass = vec3(0.757, 0.847, 0.776);
+      vec3 paleMint = vec3(0.663, 0.788, 0.718);
+      vec3 dawnPeach = vec3(0.941, 0.824, 0.698);
       vec3 color = mix(cream, warmPaper, topBlend);
       color = mix(color, footerPaper, bottomBlend);
 
       float aspect = u_resolution.x / max(u_resolution.y, 1.0);
       vec2 p = vec2((uv.x - 0.5) * aspect, uv.y - 0.5);
-      float time = u_time * 0.06;
+      float time = u_time * 0.067;
 
       // Two slowly moving noise fields bend each other into soft, liquid boundaries.
       float driftX = noise(p * 1.75 + vec2(time * 0.85, -time * 0.18));
@@ -84,11 +85,14 @@
       vec2 warp = (vec2(driftX, driftY) - 0.5) * 1.35;
       float body = fbm(p * 1.9 + warp + vec2(-time * 0.45, time * 0.22));
       float veil = fbm(p * 2.55 + warp * 1.18 + vec2(4.8 + time * 0.27, 2.1 - time * 0.19));
+      float dawnField = fbm(p * 1.28 - warp * 0.42 + vec2(3.1 + time * 0.16, -2.4 + time * 0.10));
 
       float seaFlow = smoothstep(0.36, 0.72, body);
       float mintFlow = smoothstep(0.43, 0.76, veil);
-      color = mix(color, seaGlass, seaFlow * 0.48 * edgeBlend);
-      color = mix(color, paleMint, mintFlow * 0.44 * edgeBlend);
+      float dawnFlow = smoothstep(0.44, 0.76, dawnField);
+      color = mix(color, seaGlass, seaFlow * 0.58 * edgeBlend);
+      color = mix(color, paleMint, mintFlow * 0.50 * edgeBlend);
+      color = mix(color, dawnPeach, dawnFlow * 0.20 * edgeBlend);
 
       // A fine, fixed grain gives the haze a matte, tactile surface without flicker.
       float grain = hash(gl_FragCoord.xy) - 0.5;
