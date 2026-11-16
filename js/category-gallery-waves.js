@@ -49,7 +49,7 @@
         const ring = rings[i];
         const age = (now - ring.born) / 1000;
         if (age > 2.05) { rings.splice(i, 1); continue; }
-        const radius = 28 + age * (isCompactViewport() ? 88 : 100);
+        const radius = 28 + age * (isCompactViewport() ? 70 : 78);
         const fade = Math.max(0, 1 - age / 2.05) * Math.min(1, ring.strength);
         [0, 10, 20].forEach((offset, index) => {
           ctx.beginPath();
@@ -220,7 +220,7 @@
       gl.viewport(0, 0, width, height);
       gl.uniform2f(resolutionLocation, width, height);
     }
-    gl.uniform1f(rippleSpeedLocation, isCompactViewport() ? 0.36 : 0.42);
+    gl.uniform1f(rippleSpeedLocation, isCompactViewport() ? 0.30 : 0.34);
   }
 
   function addImpulse(clientX, clientY, strength = 0.9) {

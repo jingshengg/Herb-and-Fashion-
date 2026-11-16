@@ -210,7 +210,9 @@
     const pointStep = Math.round(Math.min(156, Math.max(138, dimensions.stage * .17)));
     const pointDuration = Math.round(pointStep * .62);
     const ctaDuration = 42;
-    const ctaHoldDistance = 220;
+    const ctaHoldDistance = layout === "wide"
+      ? 220
+      : Math.round(Math.max(360, Math.min(480, dimensions.stage * .58)));
     const pointsEnd = pointStep * Math.max(0, servicePoints.length - 1) + pointDuration;
     const pointsStart = curtainPauseDistance + coverDistance;
     const ctaStart = pointsStart + pointsEnd;
@@ -229,10 +231,10 @@
     storyTimeline = gsap.timeline({
       defaults: { ease: "none" },
       scrollTrigger: {
-        trigger: layout === "wide" ? productSection : serviceStage,
+        trigger: layout === "wide" ? productSection : serviceSection,
         start: layout === "wide" ? "bottom bottom" : () => `top top+=${headerHeight()}`,
         end: () => `+=${totalDistance}`,
-        pin: layout === "wide" ? productSection : serviceStage,
+        pin: layout === "wide" ? productSection : serviceSection,
         pinSpacing: true,
         scrub: true,
         anticipatePin: 1,
