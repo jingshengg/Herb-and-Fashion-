@@ -3,15 +3,26 @@
   const stage = gallery?.querySelector("[data-category-gallery-stage]");
   if (!gallery || !stage) return;
 
+  const categorySlugs = [
+    "immune-support-daily-wellness",
+    "herbal-wellness-vitality",
+    "circulation-metabolic-wellness",
+    "bone-joint-mobility-wellness",
+    "digestive-nutritional-wellness",
+    "daily-wellness-antioxidant-care",
+    "relaxation-rest-support",
+    "wellness-drink-mixes"
+  ];
+
   const categoryNames = [
-    { en: "Immunity & Respiratory Health", enLines: ["Immunity &", "Respiratory Health"], zh: "免疫与呼吸道健康", zhLines: ["免疫与呼吸道健康"], image: "Immunity & Respiratory Health.jpg" },
-    { en: "Kidney, Liver & Reproductive Health", enLines: ["Kidney, Liver &", "Reproductive Health"], zh: "肝肾与生殖健康", zhLines: ["肝肾与生殖健康"], image: "Kidney, Liver & Reproductive Health.jpg" },
-    { en: "Cardiovascular & Three-Highs Support", enLines: ["Cardiovascular &", "Three-Highs Support"], zh: "心血管与三高调理", zhLines: ["心血管与三高", "调理"], image: "Cardiovascular & Three-Highs Support.jpg" },
-    { en: "Bone, Joint & Mobility Health", enLines: ["Bone, Joint &", "Mobility Health"], zh: "骨关节与活动力健康", zhLines: ["骨关节与活动力", "健康"], image: "Bone, Joint & Mobility Health.jpg" },
-    { en: "Digestive & Metabolic Health", enLines: ["Digestive &", "Metabolic Health"], zh: "消化与代谢健康", zhLines: ["消化与代谢健康"], image: "Digestive & Metabolic Health.jpg" },
-    { en: "Eye, Skin & Antioxidant Care", enLines: ["Eye, Skin &", "Antioxidant Care"], zh: "眼部、肌肤与抗氧化护理", zhLines: ["眼部、肌肤与", "抗氧化护理"], image: "Eye, Skin & Antioxidant Care.jpg" },
-    { en: "Mood, Stress & Sleep Support", enLines: ["Mood, Stress &", "Sleep Support"], zh: "情绪、压力与睡眠管理", zhLines: ["情绪、压力与", "睡眠管理"], image: "Mood, Stress & Sleep Support.jpg" },
-    { en: "Healthy Wellness Drink Mixes", enLines: ["Healthy Wellness", "Drink Mixes"], zh: "健康养生冲饮", zhLines: ["健康养生冲饮"], image: "Healthy Wellness Drink Mixes.jpg" }
+    { en: "Immune Support & Daily Wellness", enLines: ["Immune Support &", "Daily Wellness"], zh: "免疫支持与日常养护", zhLines: ["免疫支持与日常养护"], image: "Immunity & Respiratory Health.jpg" },
+    { en: "Herbal Wellness & Vitality", enLines: ["Herbal Wellness &", "Vitality"], zh: "草本养护与活力", zhLines: ["草本养护与活力"], image: "Kidney, Liver & Reproductive Health.jpg" },
+    { en: "Circulation & Metabolic Wellness", enLines: ["Circulation &", "Metabolic Wellness"], zh: "循环与代谢养护", zhLines: ["循环与代谢养护"], image: "Cardiovascular & Three-Highs Support.jpg" },
+    { en: "Bone, Joint & Mobility Wellness", enLines: ["Bone, Joint &", "Mobility Wellness"], zh: "骨关节与活动力养护", zhLines: ["骨关节与活动力养护"], image: "Bone, Joint & Mobility Health.jpg" },
+    { en: "Digestive & Nutritional Wellness", enLines: ["Digestive &", "Nutritional Wellness"], zh: "消化与营养养护", zhLines: ["消化与营养养护"], image: "Digestive & Metabolic Health.jpg" },
+    { en: "Daily Wellness & Antioxidant Care", enLines: ["Daily Wellness &", "Antioxidant Care"], zh: "日常养护与抗氧化护理", zhLines: ["日常养护与抗氧化护理"], image: "Eye, Skin & Antioxidant Care.jpg" },
+    { en: "Relaxation & Rest Support", enLines: ["Relaxation &", "Rest Support"], zh: "放松与休息支持", zhLines: ["放松与休息支持"], image: "Mood, Stress & Sleep Support.jpg" },
+    { en: "Wellness Drink Mixes", enLines: ["Wellness", "Drink Mixes"], zh: "养生冲饮", zhLines: ["养生冲饮"], image: "Healthy Wellness Drink Mixes.jpg" }
   ];
 
   const cards = [...stage.querySelectorAll("[data-category-card]")];
@@ -129,10 +140,9 @@
     if (index !== activeIndex) {
       activeIndex = index;
       render();
-      return;
     }
 
-    window.location.href = "products.html";
+    window.location.href = `products.html#${categorySlugs[index]}`;
   });
 
   stage.addEventListener("keydown", (event) => {

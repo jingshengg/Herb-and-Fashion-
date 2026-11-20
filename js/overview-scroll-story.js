@@ -9,6 +9,7 @@
   const serviceStage = serviceSection?.querySelector("[data-services-stage]");
   const servicePoints = Array.from(serviceSection?.querySelectorAll("[data-service-point]") || []);
   const serviceHeadings = servicePoints.map((point) => point.querySelector(".service-typewriter"));
+  const serviceTitle = serviceSection?.querySelector("#services-title");
   const serviceCta = serviceSection?.querySelector("[data-services-cta]");
   const serviceLink = serviceCta?.querySelector("a");
   const gsap = window.gsap;
@@ -48,6 +49,18 @@
     return language === "zh" ? element.dataset.typeZh || "" : element.dataset.typeEn || "";
   }
 
+  function renderServicesTitle(language = currentLanguage()) {
+    if (!serviceTitle) return;
+    const lines = language === "zh" ? ["我们的", "服务"] : ["Our", "Services"];
+    serviceTitle.replaceChildren(...lines.map((line) => {
+      const span = document.createElement("span");
+      span.className = "services-title-line";
+      span.textContent = line;
+      return span;
+    }));
+    serviceTitle.setAttribute("aria-label", language === "zh" ? "我们的服务" : "Our Services");
+  }
+
   function renderTypewriter(language = currentLanguage()) {
     serviceHeadings.forEach((element) => {
       if (!element) return;
@@ -57,19 +70,24 @@
       element.setAttribute("aria-hidden", "true");
       element.replaceChildren();
 
-      const segments = language === "zh" ? Array.from(text) : text.split(/(\s+)/u);
+      const segments = language === "zh"
+        ? text.match(/[\p{Script=Latin}\p{Number}]+(?:[&/+.-][\p{Script=Latin}\p{Number}]+)*|./gu) || []
+        : text.split(/(\s+)/u);
       segments.forEach((segment) => {
         if (!segment) return;
         if (/^\s+$/u.test(segment)) {
           element.append(document.createTextNode(segment));
           return;
         }
+        const word = document.createElement("span");
+        word.className = "service-type-word";
         Array.from(segment).forEach((glyph) => {
           const span = document.createElement("span");
           span.className = "service-type-char";
           span.textContent = glyph;
-          element.append(span);
+          word.append(span);
         });
+        element.append(word);
       });
     });
   }
@@ -103,11 +121,11 @@
       "overview-scroll-story-ready",
       "overview-scroll-story-ready-wide",
       "overview-scroll-story-ready-stacked",
-      "overview-story-wide-active",
+      "overview-story-active",
       "overview-scroll-story-static"
     );
     if (serviceStage) gsap?.set(serviceStage, { clearProps: "transform,position,top,left,width,zIndex" });
-    servicePoints.forEach((point) => gsap?.set(point, { clearProps: "opacity,visibility,transform" }));
+    servicePoints.forEach((point) => gsap?.set(point, { clearProps: "opacity,visibility,transform,zIndex" }));
     serviceHeadings.forEach((heading) => {
       heading?.querySelectorAll(".service-type-char").forEach((glyph) => {
         gsap?.set(glyph, { clearProps: "opacity,visibility,transform" });
@@ -121,6 +139,7 @@
     clearStory();
     root.classList.add("overview-scroll-story-static");
     syncDimensions();
+    renderServicesTitle();
     [productTitle, productTagline].forEach((element) => {
       if (!element) return;
       element.style.opacity = "1";
@@ -202,27 +221,28 @@
       ? "overview-scroll-story-ready-wide"
       : "overview-scroll-story-ready-stacked");
 
-    // Wide screens hold the product/water view while the services video rises
-    // over it. Narrow screens scroll products normally, then pin only the
-    // viewport-sized services stage before revealing its four points.
-    const curtainPauseDistance = layout === "wide" ? 140 : 0;
-    const coverDistance = layout === "wide" ? Math.round(dimensions.stage * .45) : 0;
-    const pointStep = Math.round(Math.min(156, Math.max(138, dimensions.stage * .17)));
-    const pointDuration = Math.round(pointStep * .62);
-    const ctaDuration = 42;
-    const ctaHoldDistance = layout === "wide"
-      ? 220
-      : Math.round(Math.max(360, Math.min(480, dimensions.stage * .58)));
-    const pointsEnd = pointStep * Math.max(0, servicePoints.length - 1) + pointDuration;
-    const pointsStart = curtainPauseDistance + coverDistance;
+    // One shared pinned scene keeps the product-to-video handoff consistent at
+    // every width. Each card uses two scroll steps: a 1/3 peek, then center.
+    const coverDistance = Math.round(Math.max(300, Math.min(360, dimensions.stage * .45)));
+    const cardScrollStep = Math.round(Math.max(112, Math.min(132, dimensions.stage * .16)));
+    const cardTravelDistance = cardScrollStep * 2;
+    const ctaDuration = cardScrollStep;
+    // Keep one scroll step of breathing room after the CTA, then hand straight
+    // off to the following section on the next scroll.
+    const ctaHoldDistance = cardScrollStep;
+    // On shorter layouts, let the products section settle at its bottom edge
+    // before beginning the curtain reveal. Wide desktop timing stays unchanged.
+    const coverDelay = layout === "wide" ? 0 : cardScrollStep;
+    const pointsStart = coverDelay + coverDistance;
+    const pointsEnd = cardTravelDistance * servicePoints.length;
     const ctaStart = pointsStart + pointsEnd;
     const totalDistance = ctaStart + ctaDuration + ctaHoldDistance;
-    const glyphDuration = Math.max(6, pointDuration * .09);
-    const glyphStagger = Math.max(32, pointDuration * .52);
+    const glyphDuration = Math.max(4, cardScrollStep * .035);
+    const glyphStagger = Math.round(cardScrollStep * .62);
 
-    gsap.set(serviceStage, { yPercent: layout === "wide" ? 100 : 0, autoAlpha: 1, force3D: true });
-    gsap.set(servicePoints, { autoAlpha: 0, y: 12 });
-    servicePoints.forEach((point) => {
+    gsap.set(serviceStage, { yPercent: 100, autoAlpha: 1, force3D: true });
+    servicePoints.forEach((point, index) => {
+      gsap.set(point, { zIndex: index + 1, autoAlpha: 0, y: 0, x: 0, scale: 1, rotationZ: 0 });
       gsap.set(point.querySelectorAll(".service-type-char"), { autoAlpha: 0 });
     });
     gsap.set(serviceCta, { autoAlpha: 0, y: 8 });
@@ -231,65 +251,84 @@
     storyTimeline = gsap.timeline({
       defaults: { ease: "none" },
       scrollTrigger: {
-        trigger: layout === "wide" ? productSection : serviceSection,
-        start: layout === "wide" ? "bottom bottom" : () => `top top+=${headerHeight()}`,
+        trigger: productSection,
+        start: "bottom bottom",
         end: () => `+=${totalDistance}`,
-        pin: layout === "wide" ? productSection : serviceSection,
+        pin: productSection,
         pinSpacing: true,
-        scrub: true,
+        scrub: .65,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onEnter: () => {
-          if (layout === "wide") root.classList.add("overview-story-wide-active");
+          root.classList.add("overview-story-active");
         },
         onEnterBack: () => {
-          if (layout === "wide") root.classList.add("overview-story-wide-active");
+          root.classList.add("overview-story-active");
         },
         onLeave: () => {
-          if (layout === "wide") {
-            root.classList.remove("overview-story-wide-active");
-            gsap.set(serviceStage, { yPercent: 0, force3D: true });
-          }
+          root.classList.remove("overview-story-active");
+          gsap.set(serviceStage, { yPercent: 0, force3D: true });
           setAccess(servicePoints.length, true);
         },
         onLeaveBack: () => {
-          if (layout === "wide") {
-            root.classList.remove("overview-story-wide-active");
-            gsap.set(serviceStage, { yPercent: 100, force3D: true });
-          }
+          root.classList.remove("overview-story-active");
+          gsap.set(serviceStage, { yPercent: 100, force3D: true });
           setAccess(0, false);
         },
         onUpdate: (self) => {
           const elapsed = self.progress * totalDistance - pointsStart;
           const visiblePoints = Math.max(0, Math.min(servicePoints.length,
-            Math.ceil(Math.max(0, elapsed) / pointStep)));
-          setAccess(visiblePoints, elapsed >= pointsEnd + ctaDuration * .72);
+            Math.ceil(Math.max(0, elapsed) / cardTravelDistance)));
+          setAccess(visiblePoints, elapsed >= pointsEnd + ctaDuration * .8);
         }
       }
     });
 
-    if (layout === "wide") {
-      storyTimeline.fromTo(serviceStage,
-        { yPercent: 100, force3D: true },
-        { yPercent: 0, duration: coverDistance, force3D: true, immediateRender: false }, curtainPauseDistance);
-    }
+    storyTimeline.fromTo(serviceStage,
+      { yPercent: 100, force3D: true },
+      { yPercent: 0, duration: coverDistance, force3D: true, immediateRender: false }, coverDelay);
 
     servicePoints.forEach((point, index) => {
-      const pointStart = pointsStart + pointStep * index;
-      storyTimeline.to(point, {
-        autoAlpha: 1,
-        y: 0,
-        duration: pointDuration,
-        force3D: true
-      }, pointStart);
+      const pointStart = pointsStart + cardTravelDistance * index;
+      const teaserY = () => Math.round(stageHeight() / 2 + point.offsetHeight / 6);
+      const hiddenY = () => Math.round(stageHeight() / 2 + point.offsetHeight / 2 + 16);
+      storyTimeline.fromTo(point,
+        { y: hiddenY, autoAlpha: 0, scale: .97, rotationZ: index % 2 ? .9 : -.9, force3D: true },
+        {
+          y: teaserY,
+          autoAlpha: 1,
+          duration: cardScrollStep,
+          force3D: true,
+          immediateRender: false
+        }, pointStart).to(point, {
+          y: 0,
+          scale: 1,
+          rotationZ: 0,
+          duration: cardScrollStep,
+          force3D: true
+        }, pointStart + cardScrollStep);
+
+      servicePoints.slice(0, index).forEach((previous, previousIndex) => {
+        const depth = index - previousIndex;
+        const direction = previousIndex % 2 === 0 ? -1 : 1;
+        storyTimeline.to(previous, {
+          x: direction * depth * 3,
+          y: depth * 14,
+          scale: 1 - depth * .025,
+          rotationZ: direction * depth * .65,
+          duration: cardScrollStep,
+          force3D: true
+        }, pointStart + cardScrollStep);
+      });
 
       const glyphs = point.querySelectorAll(".service-type-char");
       if (glyphs.length) {
         storyTimeline.to(glyphs, {
           autoAlpha: 1,
           duration: glyphDuration,
-          stagger: { amount: glyphStagger, from: "start" }
-        }, pointStart + Math.min(8, pointDuration * .06));
+          stagger: { amount: glyphStagger, from: "start" },
+          ease: "none"
+        }, pointStart + Math.min(8, cardScrollStep * .06));
       }
     });
 
@@ -300,7 +339,7 @@
       force3D: true
     }, ctaStart);
 
-    // Keep the services scene pinned briefly after the CTA appears.
+    // Keep the finished scene pinned briefly after Learn More appears.
     const ctaHold = { progress: 0 };
     storyTimeline.to(ctaHold, {
       progress: 1,

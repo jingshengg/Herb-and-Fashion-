@@ -308,7 +308,7 @@ document.addEventListener('keydown', (event) => {
   };
 
   const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim();
-  const ignoredTextRegion = '.brand, .footer-wordmark, address, .language-toggle, .product-category-filters, .product-grid, .product-bilingual-content, .product-shopee-fab, .services-preview .service-item h3, [data-partner-title]';
+  const ignoredTextRegion = '.brand, .footer-wordmark, address, .language-toggle, .product-category-filters, .product-grid, .product-bilingual-content, .product-shopee-fab, .services-preview .service-item h3, .about-storybook, [data-partner-title]';
   const translatedElements = [...document.body.querySelectorAll('*')]
     .filter((element) => !element.closest(ignoredTextRegion))
     .map((element) => ({ element, source: normalize(element.textContent) }))

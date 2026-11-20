@@ -10,11 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20261120-category-zh-v1">
   <link rel="stylesheet" href="css/page-intro.css">
   <script src="js/page-intro.js"></script>
 </head>
-<body id="top">
+<body id="top" class="products-document">
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="Herb &amp; Fashion overview">
@@ -39,41 +39,51 @@
   </header>
 
   <main class="products-page">
-    <section class="about-banner products-page-banner" aria-label="Featured Products banner">
-      <h1 class="sr-only">Featured Products</h1>
-      <img src="images/featured products banner.png" data-banner-zh="images/featured products chinese banner.png" alt="">
-    </section>
+    <header class="about-banner products-page-banner" aria-labelledby="products-page-title">
+      <h1 class="sr-only" id="products-page-title">Featured Products</h1>
+      <img src="images/featured products banner.png" data-banner-zh="images/featured products chinese banner.png" alt="" width="1920" height="300" fetchpriority="high" decoding="async">
+    </header>
 
     <section class="product-catalog-section" aria-label="Featured product catalogue">
       <div class="container product-catalog-container">
-        <div class="product-toolbar">
-          <div class="product-category-filters" role="group" aria-label="Filter products by category">
-            <button type="button" class="category-filter-button" data-category-filter="heart-circulation" aria-pressed="false">Heart <span class="plain-amp">&amp;</span> Circulation</button>
-            <button type="button" class="category-filter-button" data-category-filter="bones-joints" aria-pressed="false">Bones <span class="plain-amp">&amp;</span> Joints</button>
-            <button type="button" class="category-filter-button" data-category-filter="sleep-stress" aria-pressed="false">Sleep <span class="plain-amp">&amp;</span> Stress</button>
-            <button type="button" class="category-filter-button" data-category-filter="daily-vitality" aria-pressed="false">Daily Vitality</button>
-          </div>
+        <div class="product-category-filters" role="group" aria-label="Filter products by category">
+          <button type="button" class="category-filter-button" data-category-filter="immune-support-daily-wellness" aria-pressed="false">Immune Support &amp; Daily Wellness</button>
+          <button type="button" class="category-filter-button" data-category-filter="herbal-wellness-vitality" aria-pressed="false">Herbal Wellness &amp; Vitality</button>
+          <button type="button" class="category-filter-button" data-category-filter="circulation-metabolic-wellness" aria-pressed="false">Circulation &amp; Metabolic Wellness</button>
+          <button type="button" class="category-filter-button" data-category-filter="bone-joint-mobility-wellness" aria-pressed="false">Bone, Joint &amp; Mobility Wellness</button>
+          <button type="button" class="category-filter-button" data-category-filter="digestive-nutritional-wellness" aria-pressed="false">Digestive &amp; Nutritional Wellness</button>
+          <button type="button" class="category-filter-button" data-category-filter="daily-wellness-antioxidant-care" aria-pressed="false">Daily Wellness &amp; Antioxidant Care</button>
+          <button type="button" class="category-filter-button" data-category-filter="relaxation-rest-support" aria-pressed="false">Relaxation &amp; Rest Support</button>
+          <button type="button" class="category-filter-button" data-category-filter="wellness-drink-mixes" aria-pressed="false">Wellness Drink Mixes</button>
+        </div>
 
+        <div class="product-toolbar">
+          <div class="product-toolbar-spacer" aria-hidden="true"></div>
           <div class="product-view-toggle" role="group" aria-label="Product layout">
             <button type="button" class="view-toggle-button is-active" data-product-view="grid" aria-label="Grid view" aria-pressed="true"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i></button>
             <button type="button" class="view-toggle-button" data-product-view="list" aria-label="List view" aria-pressed="false"><i class="fa-solid fa-list" aria-hidden="true"></i></button>
           </div>
 
           <div class="product-sort-control">
-            <label for="product-sort">Sort by</label>
-            <select id="product-sort" name="sort">
-              <option value="default">Default</option>
-              <option value="name-asc">Name (A-Z)</option>
-              <option value="name-desc">Name (Z-A)</option>
-              <option value="price-asc">Price (Low-High)</option>
-              <option value="price-desc">Price (High-Low)</option>
+            <label for="product-sort" data-sort-label>Sort by</label>
+            <select id="product-sort" name="sort" aria-label="Sort products">
+              <option value="default" data-en="Default" data-zh="默认">Default</option>
+              <option value="name-asc" data-en="Name (A-Z)" data-zh="名称（A-Z）">Name (A-Z)</option>
+              <option value="name-desc" data-en="Name (Z-A)" data-zh="名称（Z-A）">Name (Z-A)</option>
+              <option value="price-asc" data-en="Price (Low-High)" data-zh="价格（由低至高）">Price (Low-High)</option>
+              <option value="price-desc" data-en="Price (High-Low)" data-zh="价格（由高至低）">Price (High-Low)</option>
             </select>
+          </div>
+
+          <div class="product-search" data-product-search>
+            <button type="button" class="product-search-toggle" data-search-toggle aria-expanded="false" aria-controls="product-search-input" aria-label="Search products"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+            <input id="product-search-input" class="product-search-input" type="search" data-search-input autocomplete="off" tabindex="-1" aria-label="Search product names" placeholder="Search products">
           </div>
         </div>
 
-        <p class="product-results-count" data-product-count aria-live="polite">Loading products…</p>
-        <div class="product-grid" data-product-grid aria-live="polite" aria-busy="true"></div>
-        <p class="product-empty-state" data-product-empty hidden>No products are available in this category yet.</p>
+        <p class="sr-only" data-product-status role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="product-grid" data-product-grid aria-busy="true"></div>
+        <p class="product-empty-state" data-product-empty hidden>No products match this selection.</p>
       </div>
     </section>
   </main>
@@ -90,8 +100,8 @@
   <a href="documents/privacy-policy-en.pdf" data-legal-link data-pdf-en="documents/privacy-policy-en.pdf" data-pdf-zh="documents/privacy-policy-zh.pdf">Privacy Policy</a>
 </div>
   </footer>
-  <script src="js/product-data.js"></script>
-  <script src="js/products.js"></script>
+  <script src="js/product-data.js?v=20261120-1200"></script>
+  <script src="js/products.js?v=20261120-1330"></script>
   <script src="js/script.js"></script>
   <script src="js/product-shopee.js"></script>
 </body>
