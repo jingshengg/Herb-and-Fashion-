@@ -1,0 +1,73 @@
+/* Chinese typography refinements for the About Us page only. */
+html[lang^="zh"] body.about-page .about-story .story-paragraph {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.about-page .about-story .company-name-highlight {
+  font-weight: 700;
+}
+
+html[lang^="zh"] body.about-page .about-storybook h2,
+html[lang^="zh"] body.about-page .about-purpose .about-section-heading h2,
+html[lang^="zh"] body.about-page .about-footprint .about-section-heading h2 {
+  color: #14453d;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: clamp(2.75rem, 5.2vw, 5rem);
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+html[lang^="zh"] body.about-page .about-storybook-intro,
+html[lang^="zh"] body.about-page .about-storybook-intro > span[lang="zh-Hans"] {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.about-page .about-storybook-highlights li > span {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.about-page .about-storybook-highlights li > span > strong[lang="zh-Hans"],
+html[lang^="zh"] body.about-page .purpose-card h3 {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+html[lang^="zh"] body.about-page .about-storybook-highlights li > span > strong[lang="zh-Hans"] {
+  font-size: 1.1875rem;
+}
+
+html[lang^="zh"] body.about-page .about-storybook-highlights li > span > span[lang="zh-Hans"],
+html[lang^="zh"] body.about-page .purpose-card p,
+html[lang^="zh"] body.about-page .footprint-heading > p:last-child {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.about-page .about-storybook-cta,
+html[lang^="zh"] body.about-page .about-purpose .about-section-heading > .eyebrow {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .06em;
+}
+
+html[lang^="zh"] body.about-page .footprint-heading > p:last-child {
+  font-size: 1.0625rem;
+}

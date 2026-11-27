@@ -1,0 +1,74 @@
+/* English-only Overview typography. Chinese text and every other page keep their existing rules. */
+html[data-language="en"] body.overview-page .hero-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+}
+
+html[data-language="en"] body.overview-page .hero-tagline {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: clamp(16px, 1.1vw, 17px);
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 1.65;
+}
+
+html[data-language="en"] body.overview-page .hero-caption-cta {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+}
+
+html[data-language="en"] body.overview-page .products-preview #products-title,
+html[data-language="en"] body.overview-page .services-preview #services-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+}
+
+html[data-language="en"] body.overview-page .products-intro > p {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 1.7;
+}
+
+html[data-language="en"] body.overview-page .category-gallery .category-card__title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 1.5rem + .35vw, 30px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.15;
+}
+
+html[data-language="en"] body.overview-page .services-preview .service-item h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(24px, 1.15rem + .45vw, 26px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.15;
+}
+
+/* Keep ampersands visually balanced with each English Overview type style. */
+html[data-language="en"] body.overview-page .hero-title :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .products-preview #products-title :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .services-preview #services-title :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .category-gallery .category-card__title :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .services-preview .service-item h3 :is(.ampersand-times, .plain-amp) {
+  font-family: "Noto Serif SC", serif !important;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+html[data-language="en"] body.overview-page .hero-tagline :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .products-intro > p :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .hero-caption-cta :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.overview-page .services-learn-more :is(.ampersand-times, .plain-amp) {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif !important;
+  font-weight: 500;
+  letter-spacing: inherit;
+}

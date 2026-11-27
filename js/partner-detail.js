@@ -8,7 +8,7 @@
   const logoBase = 'images/our%20partners/';
   const partners = {
     unicare: {
-      name: 'Unicare Pharmacy', logo: 'unicare-pharmacy.png', locations: [
+      name: 'Unicare Pharmacy', nameZh: '康民药剂行', logo: 'unicare-pharmacy.png', locations: [
         { name: 'Unicare Pharmacy (Unicity) 大学城', address: 'No 8,10 & 12, Lorong Wawasan, 9A, Jln Wawasan, 96000 Sibu, Sarawak, Malaysia.', contact: '019-589 5813', hours: ['8:00am - 9:00pm'] },
         { name: 'Unicare Pharmacy (Wonderful) 万家福', address: 'Lot 1612 Block 1, Sungai Merah Town District, Jalan Ling Kai Cheng, 96000 Sibu, Sarawak, Malaysia.', contact: '013-578 5813', hours: ['8:00am – 8:00pm'] },
         { name: 'Unicare Pharmacy (C.S.H.) 周锡萱', address: 'No 18, Lorong Chew Siik Hiong 1, Pekan Sibu, 96000 Sibu, Sarawak, Malaysia.', contact: '019-259 5813', hours: ['SAT-TUE 7:30am - 7:30pm', 'WED-FRI 7:00am - 7:30pm'] },
@@ -17,13 +17,13 @@
       ]
     },
     greenhouse: {
-      name: 'Greenhouse', logo: 'green-house.png', locations: [
+      name: 'Greenhouse', nameZh: '恩粮坊', logo: 'green-house.png', locations: [
         { name: 'Greenhouse Johor Jaya', address: 'No. 37 & 39, Jalan Rosmerah 2/11, Taman Johor Jaya, 81100 Johor Bahru, Johor, Malaysia.', hours: ['9:30am - 6:30pm (except Sunday)'], contact: '011-5657 3807' },
         { name: 'Greenhouse Impian Emas', address: 'No. 93, 95, Jalan Impian Emas 22, Taman Impian Emas, 81300 Skudai, Johor Bahru, Johor, Malaysia.', hours: ['9:30am - 6:30pm'], contact: '016-237 3809' }
       ]
     },
     'peter-chinese-medical': {
-      name: 'Peter Chinese Medical Hall', logo: 'peter-chinese-medical.png', locations: [
+      name: 'Peter Chinese Medical Hall', nameZh: '彼德中医内科正骨诊疗所', logo: 'peter-chinese-medical.png', locations: [
         { name: 'Peter Chinese Medical Hall', address: 'Lot 10387 Sublot 23 Ground Floor, Panovel Commercial Centre, Q5A, Kampung Kenyalang Park, 93300 Kuching, Sarawak, Malaysia.', hours: ['Mon-Sat 8:00am – 4:30pm (except Sunday)', 'Wed 8:00am – 11:30am'], contact: '018-255 9121' }
       ]
     },
@@ -33,13 +33,13 @@
       ]
     },
     'sing-lee-pharmacy': {
-      name: 'Sing Lee Pharmacy', logo: 'sing-lee-pharmacy.png', locations: [
+      name: 'Sing Lee Pharmacy', nameZh: '信利西药行', logo: 'sing-lee-pharmacy.png', locations: [
         { name: 'Sing Lee Pharmacy', address: '857, Q112B, Tabuan Jaya Commercial Centre, 93350 Kuching, Sarawak, Malaysia.', contact: '082-236 6196', hours: ['9:30am – 7:30pm'] }
       ]
     },
     'bio-health-cmc': {
-      name: 'Peter Chinese Medicine Hall', logo: 'bio-health-cmc.png', locations: [
-        { name: 'Peter Chinese Medicine Hall', address: 'Lot 10387 Sublot 23 Ground Floor, Panovel Commercial Centre, Q5A, Kampung Kenyalang Park, 93300 Kuching, Sarawak, Malaysia.', hours: ['Mon-Sat 8:00am – 4:30pm (except Sunday)', 'Wed 8:00am – 11:30am'], contact: '018-255 9121' }
+      name: 'Bio Health Chinese Medical Centre', logo: 'bio-health-cmc.png', locations: [
+        { name: 'Bio Health Chinese Medical Centre', address: 'Lot 10387 Sublot 23 Ground Floor, Panovel Commercial Centre, Q5A, Kampung Kenyalang Park, 93300 Kuching, Sarawak, Malaysia.', hours: ['Mon-Sat 8:00am – 4:30pm (except Sunday)', 'Wed 8:00am – 11:30am'], contact: '018-255 9121' }
       ]
     },
     'ij-pharmacy': {
@@ -54,8 +54,13 @@
       ]
     },
     'george-pharmacy': {
-      name: 'George Pharmacy', logo: 'george%20pharmacy.png', locations: [
+      name: 'George Pharmacy', nameZh: '乔治药剂行', logo: 'george%20pharmacy.png', locations: [
         { name: 'George Pharmacy', address: 'BDC Commercial Centre, 974, Jalan Stutong, Taman Satria Jaya, 93350 Kuching, Sarawak, Malaysia.', contact: '082-575 434' }
+      ]
+    },
+    'han-fang-tcm': {
+      name: 'Han Fang Chinese Physician and Acupuncturist', nameZh: '新汉方中医诊所', logo: 'Han%20Fang%20tcm.png', locations: [
+        { name: 'Han Fang Chinese Physician and Acupuncturist 新汉方中医诊所', address: 'No 126 H, Ground Floor Green Heights Commercial Centre, Lorong Lapangan Terbang 2, 93250 Kuching, Sarawak, Malaysia.', hours: ['8:30am - 12:30pm', '1:30pm – 6:00 pm'], hoursNote: '(except Sunday)', contact: '017-807 6699' }
       ]
     },
     'arumi-health': {
@@ -70,19 +75,42 @@
   const partner = partners[new URLSearchParams(window.location.search).get('partner')] || partners.unicare;
   logo.src = logoBase + partner.logo;
   logo.alt = partner.name + ' logo';
-  title.textContent = partner.name;
 
-  const appendField = (card, label, values) => {
+  const updateTitle = (language) => {
+    const showChinese = language === 'zh' && partner.nameZh;
+    title.textContent = showChinese ? partner.nameZh : partner.name;
+    title.classList.toggle('partner-detail-title-zh', Boolean(showChinese));
+    title.lang = showChinese ? 'zh-Hans' : 'en';
+  };
+
+  const appendField = (card, label, values, note = '') => {
     if (!values?.length) return;
     const row = document.createElement('div');
     const term = document.createElement('dt');
     const description = document.createElement('dd');
     term.dataset.partnerField = label;
-    description.append(...values.flatMap((value, index) => {
-      const text = [document.createTextNode(value)];
-      if (index < values.length - 1) text.push(document.createElement('br'));
-      return text;
-    }));
+    term.className = 'sr-only';
+    term.textContent = label;
+    if (note && values.length > 1) {
+      description.className = 'partner-hours-split';
+      const times = document.createElement('span');
+      times.className = 'partner-hours-times';
+      times.append(...values.flatMap((value, index) => {
+        const text = [document.createTextNode(value)];
+        if (index < values.length - 1) text.push(document.createElement('br'));
+        return text;
+      }));
+      const noteText = document.createElement('span');
+      noteText.className = 'partner-hours-note';
+      noteText.textContent = note;
+      description.append(times, noteText);
+    } else {
+      description.append(...values.flatMap((value, index) => {
+        const text = [document.createTextNode(value)];
+        if (index < values.length - 1) text.push(document.createElement('br'));
+        return text;
+      }));
+    }
     row.append(term, description);
     card.querySelector('dl').append(row);
   };
@@ -98,11 +126,21 @@
       const card = document.createElement('article');
       card.className = 'partner-location-card';
       const branch = document.createElement('h2');
-      branch.textContent = location.name;
+      const chineseSuffix = location.name.match(/([\u3400-\u9fff]+)$/)?.[1];
+      if (chineseSuffix) {
+        const englishPart = location.name.slice(0, -chineseSuffix.length).trimEnd();
+        const chinesePart = document.createElement('span');
+        chinesePart.className = 'partner-location-name-zh';
+        chinesePart.lang = 'zh-Hans';
+        chinesePart.textContent = ` ${chineseSuffix}`;
+        branch.append(document.createTextNode(englishPart), chinesePart);
+      } else {
+        branch.textContent = location.name;
+      }
       const fields = document.createElement('dl');
       card.append(branch, fields);
       appendField(card, copy.address, [location.address]);
-      appendField(card, copy.hours, location.hours);
+      appendField(card, copy.hours, location.hours, location.hoursNote);
       appendField(card, copy.contact, location.contact ? [location.contact] : []);
       locationsRoot.append(card);
     });
@@ -130,6 +168,10 @@
     }
   };
 
-  render(document.documentElement.dataset.language === 'zh' ? 'zh' : 'en');
-  window.addEventListener('herb-language-change', (event) => render(event.detail.language));
+  const renderForLanguage = (language) => {
+    updateTitle(language);
+    render(language);
+  };
+  renderForLanguage(document.documentElement.dataset.language === 'zh' ? 'zh' : 'en');
+  window.addEventListener('herb-language-change', (event) => renderForLanguage(event.detail.language));
 })();

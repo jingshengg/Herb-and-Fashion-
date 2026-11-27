@@ -9,7 +9,7 @@
   const labels = {
     en: {
       back: 'Back to Featured Products', notFound: 'Product not found', unavailable: 'Product details are not available yet',
-      price: 'Price', netQuality: 'Net Quality', missingValue: 'Not specified in the supplied product information',
+      price: 'Price', netQuality: 'Net Quantity', missingValue: 'Not specified in the supplied product information',
       nutrition: 'Nutrition Information', function: 'Function', dosage: 'Dosage', ingredients: 'Ingredients', additional: 'Additional Information',
       per100: 'Per 100 grams', perServing: 'Per Serving', ingredientNo: 'No.', ingredientName: 'Ingredient', amount: 'Amount', viewAll: 'View Featured Products',
     },
@@ -64,7 +64,7 @@
   const details = (window.herbProductDetails || {})[product.id] || {};
   const isDrink = product.productType === 'drink-mix';
   const media = document.createElement('div');
-  media.className = 'product-detail-media';
+  media.className = `product-detail-media${isDrink ? ' product-detail-media--drink' : ''}`;
   const image = document.createElement('img');
   image.src = encodeURI(product.image);
   image.alt = '';
@@ -84,8 +84,13 @@
   licenseField.className = 'product-detail-license';
   const netField = document.createElement('p');
   netField.className = 'product-detail-net-quality';
-  meta.append(priceField);
-  if (isDrink) meta.append(netField);
+  const badgeRow = document.createElement('div');
+  badgeRow.className = 'product-detail-badges';
+  const specificationField = document.createElement('p');
+  specificationField.className = 'product-detail-specification';
+  badgeRow.append(isDrink ? netField : licenseField);
+  if (!isDrink) badgeRow.append(specificationField);
+  meta.append(badgeRow, priceField);
 
   const functionSection = document.createElement('section');
   functionSection.className = 'product-detail-function';
@@ -102,7 +107,7 @@
   const ingredients = makeDisclosure('ingredients');
   const additional = makeDisclosure('additional');
   [dosage, nutrition, ingredients, additional].filter(Boolean).forEach(({ details: disclosure }) => accordions.append(disclosure));
-  copy.append(title, secondaryName, licenseField, meta);
+  copy.append(title, secondaryName, meta);
   if (!isDrink) copy.append(functionSection);
   copy.append(accordions);
   root.append(media, copy);
@@ -116,6 +121,25 @@
     panel.className = `product-accordion-panel product-detail-panel product-detail-panel-${key}`;
     detailsElement.append(summary, panel);
     return { details: detailsElement, summary, panel, key };
+  }
+
+  function makeLicenseShield() {
+    const namespace = 'http://www.w3.org/2000/svg';
+    const icon = document.createElementNS(namespace, 'svg');
+    icon.setAttribute('class', 'product-detail-license-icon');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('aria-hidden', 'true');
+    const shield = document.createElementNS(namespace, 'path');
+    shield.setAttribute('d', 'M12 2.5 4.5 5.3v5.3c0 5.1 3.1 8.8 7.5 10.9 4.4-2.1 7.5-5.8 7.5-10.9V5.3L12 2.5Z');
+    const check = document.createElementNS(namespace, 'path');
+    check.setAttribute('d', 'm8.4 12.1 2.3 2.3 4.9-5.1');
+    icon.append(shield, check);
+    return icon;
+  }
+
+  function formatNetQuality(value, language) {
+    const formatted = String(value || '').trim().replace(/\s*[x×]\s*/gi, ' × ');
+    return language === 'zh' ? formatted.replace(/\bsachets?\b/gi, '独立小袋') : formatted;
   }
 
   function createDrinkTutorial() {
@@ -640,14 +664,24 @@
     title.lang = currentLanguage === 'zh' ? 'zh-Hans' : 'en';
     secondaryName.textContent = currentLanguage === 'zh' ? product.name : product.chineseName;
     secondaryName.lang = currentLanguage === 'zh' ? 'en' : 'zh-Hans';
-    priceField.textContent = product.price == null ? '' : `RM ${product.price}`;
+    priceField.replaceChildren(
+      textElement('span', 'product-detail-price-currency', 'RM'),
+      textElement('span', 'product-detail-price-amount', product.price == null ? '' : String(product.price))
+    );
     priceField.hidden = product.price == null;
-    licenseField.textContent = /^MAL\d{8}(?:TC|NC)$/i.test(product.license || '') ? product.license : '';
-    licenseField.hidden = isDrink || !licenseField.textContent;
+    const license = /^MAL\d{8}(?:TC|NC)$/i.test(product.license || '') ? product.license : '';
+    licenseField.hidden = !license;
+    licenseField.replaceChildren();
+    if (!isDrink && license) {
+      licenseField.append(makeLicenseShield());
+      licenseField.append(textElement('span', 'product-detail-license-code', license));
+    }
+    specificationField.textContent = currentLanguage === 'zh' ? '100 粒胶囊 / 瓶' : '100 Capsules / Bottle';
     netField.hidden = !isDrink;
     netField.replaceChildren(
       textElement('span', 'product-detail-meta-label', copy.netQuality),
-      textElement('strong', '', String(details.netQuality || '').trim() || copy.missingValue)
+      textElement('span', 'product-detail-meta-separator', currentLanguage === 'zh' ? '：' : ':'),
+      textElement('strong', 'product-detail-net-value', formatNetQuality(details.netQuality, currentLanguage) || copy.missingValue)
     );
     image.alt = currentLanguage === 'zh'
       ? `${product.chineseName}（${product.name}）产品包装`
@@ -670,7 +704,7 @@
     additional.panel.replaceChildren();
     renderAdditional(additional.panel);
 
-    functionHeading.textContent = copy.function;
+    functionHeading.textContent = currentLanguage === 'zh' ? '产品功能 · Function' : 'Function · 产品功能';
     functionContent.replaceChildren();
     renderTextLines(functionContent, details.function || []);
     drinkTutorial?.updateLanguage(currentLanguage);

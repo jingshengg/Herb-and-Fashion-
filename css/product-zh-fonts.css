@@ -1,0 +1,148 @@
+/* Typography refinements scoped to the Featured Products catalogue and details. */
+.products-document .product-category-filters,
+.products-document .product-toolbar,
+.products-document .product-toolbar button,
+.products-document .product-toolbar label,
+.products-document .product-toolbar select,
+.products-document .product-toolbar input {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+.products-document .product-category-filters .category-filter-button {
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+html[lang^="zh"] .products-document .product-grid::before {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 700;
+  letter-spacing: .25em;
+}
+
+html[lang^="zh"] .products-document .product-cabinet-index {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: .9375rem;
+  font-weight: 600;
+}
+
+html[lang^="zh"] .products-document .product-grid:not(.is-list-view) .product-name-primary {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.products-document .product-grid .product-price {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: .03em;
+}
+
+html[lang^="zh"] .products-document .product-grid.is-list-view .product-name-primary {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: none;
+}
+
+.product-detail-document .product-detail-meta,
+.product-detail-document .product-detail-meta > *,
+.product-detail-document .product-detail-price,
+.product-detail-document .product-detail-badges {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+}
+
+.product-detail-document .product-detail-badges > .product-detail-license,
+.product-detail-document .product-detail-badges > .product-detail-net-quality,
+.product-detail-document .product-detail-badges > .product-detail-specification {
+  font-weight: 500;
+}
+
+.product-detail-document .product-detail-license-code,
+.product-detail-document .product-detail-meta-label,
+.product-detail-document .product-detail-net-value {
+  font-weight: 500;
+}
+
+.product-detail-document .product-detail-price {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.product-detail-document .product-detail-price-currency { font-weight: 500; }
+.product-detail-document .product-detail-price-amount {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+html[lang^="zh"] .product-detail-document .product-detail-copy > h1[lang="zh-Hans"] {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.product-detail-document .product-detail-function .product-detail-section-title {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+html[lang^="zh"] .product-detail-document .product-detail-function-content .product-bilingual-zh {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: .04em;
+}
+
+.product-detail-document .product-accordion > summary {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.09375rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.product-detail-document .product-detail-panel-dosage .product-bilingual-zh,
+.product-detail-document .product-additional-text .product-bilingual-zh {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.03125rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+.product-detail-document .product-ingredients-table {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.product-detail-document .product-ingredients-table th,
+.product-detail-document .product-ingredients-table td.product-ingredient-amount,
+.product-detail-document .product-ingredients-table td.product-ingredient-number,
+.product-detail-document .product-additional-number {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+html[lang^="zh"] .product-detail-document .product-ingredient-name .product-bilingual-zh {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.65;
+  letter-spacing: .05em;
+}
+
+html[lang^="zh"] .product-detail-document .product-additional-text .product-bilingual-zh {
+  font-weight: 400;
+}

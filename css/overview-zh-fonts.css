@@ -1,0 +1,50 @@
+/* Chinese typography updates scoped to the Overview page only. */
+html[lang^="zh"] body.overview-page {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+html[lang^="zh"] body.overview-page .site-header .site-menu,
+html[lang^="zh"] body.overview-page .site-header .site-menu a,
+html[lang^="zh"] body.overview-page .language-option-zh,
+html[lang^="zh"] body.overview-page .button,
+html[lang^="zh"] body.overview-page .services-learn-more,
+html[lang^="zh"] body.overview-page button,
+html[lang^="zh"] body.overview-page input[type="button"],
+html[lang^="zh"] body.overview-page input[type="submit"],
+html[lang^="zh"] body.overview-page input[type="reset"] {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+html[lang^="zh"] body.overview-page .hero-title {
+  font-family: "Hanyi Senty Chalk Original", "KaiTi", "YRDZST-Semibold", serif;
+}
+
+html[lang^="zh"] body.overview-page .products-preview #products-title,
+html[lang^="zh"] body.overview-page .services-preview #services-title {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: clamp(2.75rem, 5.2vw, 5rem);
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.05;
+}
+
+html[lang^="zh"] body.overview-page .products-intro > p {
+  font-family: "LXGW WenKai TC", "KaiTi", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.overview-page .category-card__title,
+html[lang^="zh"] body.overview-page .category-card__title *,
+html[lang^="zh"] body.overview-page .services-preview .service-item h3 {
+  font-family: "LXGW WenKai TC", "KaiTi", serif;
+  font-weight: 700 !important;
+  letter-spacing: .06em;
+  font-synthesis: weight;
+}

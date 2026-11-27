@@ -773,6 +773,77 @@ body.event-record-open { overflow: hidden; }
     text-justify: auto;
   }
 }
+
+/* Typography refinements for the Events page only. */
+.prescription-index,
+.prescription-cover-open,
+.event-record-close {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+}
+
+.prescription-index {
+  letter-spacing: .08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.prescription-cover-open { letter-spacing: .06em; }
+
+.cover-meta-label {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: .78125rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+
+.prescription-cover-meta .cover-meta-entry:first-child .cover-meta-value {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: .90625rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.prescription-cover-meta .cover-meta-location .cover-meta-value-row [lang="zh-Hans"] {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: .96875rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.event-paper-kicker [lang="zh-Hans"] {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.prescription-cover-title-zh,
+.event-paper-heading h2 .event-title-zh,
+.cover-flap-title [lang="zh-Hans"] {
+  font-family: "YangRenDong ZhuShi", "PingFang SC", "Noto Sans SC", sans-serif;
+  letter-spacing: .06em;
+}
+
+.event-record-overlay .event-paper-meta,
+.event-record-overlay .event-paper-meta > span {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+.event-record-overlay .event-description-block p[lang],
+.event-record-overlay .event-paper-summary .event-description-block p[lang] {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: clamp(1.03125rem, calc(1rem + .12vw), 1.0625rem);
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: .04em;
+}
+
+.event-record-close {
+  letter-spacing: .05em;
+}
 /* Fourth record: centered keepsake placement for George Pharmacy in Kuching. */
 .prescription-cover-george .cover-sticker-record-cat {
   position: absolute;

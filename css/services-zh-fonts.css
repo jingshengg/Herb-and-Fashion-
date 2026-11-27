@@ -1,0 +1,63 @@
+/* Chinese typography refinements for the standalone Our Services page only. */
+html[lang^="zh"] body.services-document .service-metric-value {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 700;
+}
+
+html[lang^="zh"] body.services-document .service-metric-label {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+html[lang^="zh"] body.services-document .service-metric-note {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: .8125rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.services-document .service-solutions-heading > .eyebrow {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .06em;
+}
+
+html[lang^="zh"] body.services-document .service-solutions-heading h2,
+html[lang^="zh"] body.services-document .partners-heading h2 {
+  color: var(--teal-ink);
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: clamp(2.35rem, 4.5vw, 3.7rem);
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.12;
+}
+
+html[lang^="zh"] body.services-document .service-capability-card-head h3 {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+html[lang^="zh"] body.services-document .service-capability-copy p {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.03125rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.services-document .partners-intro {
+  font-family: "LXGW WenKai TC", "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+html[lang^="zh"] body.services-document .partner-region-button {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .05em;
+}

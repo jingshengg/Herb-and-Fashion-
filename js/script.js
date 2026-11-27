@@ -446,6 +446,19 @@ if (partnerCarousel) {
   const emptyState = partnerCarousel.querySelector('[data-partner-empty]');
   const visibleSlides = 5;
   const selectedRegions = new Set();
+  const updatePartnerCaptions = () => {
+    const isChinese = document.documentElement.dataset.language === 'zh';
+    [...items, ...clones].forEach((item) => {
+      const caption = item.querySelector('[data-partner-caption]');
+      if (caption) {
+        const hasChineseName = isChinese && Boolean(item.dataset.nameZh);
+        caption.textContent = hasChineseName
+          ? item.dataset.nameZh
+          : (item.dataset.nameEn || '');
+        caption.lang = hasChineseName ? 'zh-Hans' : 'en';
+      }
+    });
+  };
   const clones = items.slice(0, visibleSlides).map((item) => {
     const clone = item.cloneNode(true);
     clone.removeAttribute('href');
@@ -508,6 +521,7 @@ if (partnerCarousel) {
   const render = () => {
     const filtering = selectedRegions.size > 0;
     clearAdvanceTimer();
+    updatePartnerCaptions();
     partnerCarousel.classList.toggle('is-filtered', filtering);
     regionButtons.forEach((button) => {
       button.setAttribute('aria-pressed', String(selectedRegions.has(button.dataset.region)));
@@ -555,6 +569,7 @@ if (partnerCarousel) {
   window.addEventListener('resize', () => { if (!selectedRegions.size) setPosition(false); }, { passive: true });
   window.addEventListener('load', () => { if (!selectedRegions.size) setPosition(false); }, { once: true });
   window.addEventListener('herb-language-change', () => {
+    updatePartnerCaptions();
     if (selectedRegions.size && emptyState && selectedRegions.has('klang-valley')) {
       emptyState.textContent = document.documentElement.dataset.language === 'zh'
         ? '巴生谷合作伙伴信息即将公布。'

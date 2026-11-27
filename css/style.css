@@ -3343,3 +3343,372 @@ html[data-language="zh"] .about-storybook-highlights li > span > span[lang="zh-H
   .about-storybook-badge { transition: none; }
 }
 
+/* Product detail bilingual title, metadata and function card refinements. */
+.product-detail-copy > h1[lang="zh-Hans"] {
+  font-size: clamp(2.25rem, 2.6vw, 2.5rem);
+  line-height: 1.2;
+}
+.product-detail-copy > h1[lang="en"] {
+  font-size: clamp(2rem, 1.9rem + .35vw, 2.125rem);
+  line-height: 1.2;
+  letter-spacing: .03em;
+}
+.product-detail-copy > .product-detail-secondary-name {
+  margin-block: 6px 0;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+html[lang^="zh"] .product-detail-copy > .product-detail-secondary-name[lang="en"] {
+  letter-spacing: .12em;
+  opacity: .7;
+}
+html:not([lang^="zh"]) .product-detail-copy > .product-detail-secondary-name[lang="zh-Hans"] {
+  font-size: .9375rem;
+  letter-spacing: .15em;
+  opacity: .72;
+}
+
+.product-detail-copy .product-detail-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-block-start: 1.25rem;
+}
+.product-detail-copy .product-detail-meta > p {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.product-detail-meta .product-detail-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .25rem;
+  color: var(--teal-ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.product-detail-price-currency { font-size: 1.0625rem; font-weight: 500; }
+.product-detail-price-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+.product-detail-copy .product-detail-meta > .product-detail-license,
+.product-detail-copy .product-detail-meta > .product-detail-net-quality {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 auto;
+  gap: .38rem;
+  min-height: 0;
+  margin: 0;
+  padding: .42rem .78rem;
+  border: 1px solid #d6e1dc;
+  border-radius: 999px;
+  background: #eef4f1;
+  color: var(--teal-ink);
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.product-detail-meta .product-detail-license::before,
+.product-detail-meta .product-detail-net-quality::before {
+  position: absolute;
+  inset-inline-start: -.42rem;
+  width: 1px;
+  height: 1.5rem;
+  background: rgb(19 78 74 / 34%);
+  content: "";
+}
+.product-detail-license-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.product-detail-license-prefix,
+.product-detail-license-code,
+.product-detail-net-value { font-weight: 700; }
+.product-detail-meta-separator { color: rgb(19 78 74 / 58%); }
+.product-detail-meta .product-detail-net-quality .product-detail-meta-label {
+  color: var(--teal-ink);
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.product-detail-meta .product-detail-net-quality strong {
+  color: var(--teal-ink);
+  font-size: inherit;
+}
+
+html[lang] .product-detail-copy > .product-detail-function {
+  margin-block-start: 22px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 18px;
+  border: 1px solid rgb(19 78 74 / 14%);
+  border-inline-start: 3.5px solid #d4a037;
+  border-radius: 0 8px 8px 0;
+  background: #f2f6f4;
+}
+.product-detail-function .product-detail-section-title {
+  margin: 0 0 .55rem;
+  color: rgb(19 78 74 / 72%);
+  font-family: var(--font-sans);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.product-detail-function-content .product-bilingual-entry {
+  margin: 0;
+  text-align: start;
+}
+.product-detail-function-content .product-bilingual-entry + .product-bilingual-entry { margin-block-start: .6rem; }
+.product-detail-function-content .product-bilingual-en,
+.product-detail-function-content .product-bilingual-zh { margin: 0; text-align: start; }
+html[lang^="zh"] .product-detail-function-content .product-bilingual-zh {
+  color: #134e4a;
+  font-size: .9375rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+html[lang^="zh"] .product-detail-function-content .product-bilingual-en {
+  margin-block-start: .2rem;
+  color: rgb(19 78 74 / 68%);
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+html:not([lang^="zh"]) .product-detail-function-content .product-bilingual-en {
+  color: #134e4a;
+  font-size: .9375rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+html:not([lang^="zh"]) .product-detail-function-content .product-bilingual-zh {
+  margin-block-start: .2rem;
+  color: rgb(19 78 74 / 68%);
+  font-size: .84375rem;
+  line-height: 1.5;
+}
+
+.product-detail-accordions { position: relative; padding-block-end: 1px; }
+.product-detail-accordions > .product-accordion:last-child { border-bottom: 0; }
+.product-detail-accordions::after {
+  display: none;
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgb(19 78 74 / 40%) 12%, rgb(19 78 74 / 40%) 88%, transparent 100%);
+  content: "";
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .product-detail-copy > h1[lang="zh-Hans"] { font-size: clamp(2.25rem, 7vw, 2.5rem); }
+  .product-detail-copy > h1[lang="en"] { font-size: clamp(1.75rem, 6.2vw, 2rem); }
+  .product-detail-copy .product-detail-meta { gap: .65rem; }
+  .product-detail-meta .product-detail-license::before,
+  .product-detail-meta .product-detail-net-quality::before { display: none; }
+}
+
+/* Product detail metadata rows: badges first, price directly beneath. */
+.product-detail-copy { text-align: start; }
+.product-detail-copy .product-detail-meta {
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  margin-block-start: .875rem;
+}
+.product-detail-badges {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-inline-size: 0;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: .625rem;
+}
+.product-detail-copy .product-detail-badges > .product-detail-license,
+.product-detail-copy .product-detail-badges > .product-detail-net-quality,
+.product-detail-copy .product-detail-badges > .product-detail-specification {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 auto;
+  gap: .38rem;
+  min-height: 0;
+  margin: 0;
+  padding: .42rem .78rem;
+  border: 1px solid #d6e1dc;
+  border-radius: 999px;
+  background: #f6f9f7;
+  color: var(--teal-ink);
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.product-detail-copy .product-detail-badges > .product-detail-net-quality { gap: 0; }
+html:not([lang^="zh"]) .product-detail-copy .product-detail-net-quality .product-detail-meta-separator { margin-inline-end: .25rem; }
+.product-detail-copy .product-detail-badges > [hidden] { display: none !important; }
+.product-detail-meta .product-detail-license::before,
+.product-detail-meta .product-detail-net-quality::before {
+  display: none;
+  content: none;
+}
+.product-detail-copy .product-detail-meta > .product-detail-price {
+  align-self: flex-start;
+  justify-content: flex-start;
+  text-align: start;
+}
+.product-detail-function .product-detail-section-title {
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: none;
+}
+html[lang^="zh"] .product-detail-function-content .product-bilingual-zh,
+html:not([lang^="zh"]) .product-detail-function-content .product-bilingual-en {
+  font-size: 1rem;
+}
+html[lang^="zh"] .product-detail-function-content .product-bilingual-en,
+html:not([lang^="zh"]) .product-detail-function-content .product-bilingual-zh {
+  font-size: .90625rem;
+}
+
+/* Keep drink-mix packaging comfortably inset from the detail image frame. */
+.product-detail-media--drink img {
+  width: calc(100% - clamp(48px, 8vw, 84px));
+  height: calc(100% - clamp(48px, 8vw, 84px));
+  padding: 0;
+  object-fit: contain;
+}
+
+/* Shared Chinese navigation typography across all pages. */
+html[lang^="zh"] .site-header .site-menu,
+html[lang^="zh"] .site-header .site-menu a {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+/* Shared footer typography across every page. */
+.site-footer .footer-content > p {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.site-footer .footer-legal-links {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 400;
+  letter-spacing: .05em;
+}
+
+.site-footer .back-to-top {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+/* Partner names appear only in the region-filtered logo grid. */
+.partner-name-caption { display: none; }
+.partner-carousel.is-filtered .partner-item {
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 8px 10px 10px;
+}
+.partner-carousel.is-filtered .partner-item img {
+  flex: 0 0 132px;
+  width: 100%;
+  height: 132px;
+  max-height: 132px;
+  padding: 10px;
+}
+.partner-carousel.is-filtered .partner-name-caption {
+  display: flex;
+  width: 100%;
+  min-height: 2.8em;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  color: var(--teal-ink);
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.partner-carousel.is-filtered .partner-name-caption:lang(zh) {
+  font-family: "LXGW WenKai TC", "PingFang SC", serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  line-height: 1.4;
+}
+
+/* Partner directory typography, bilingual headings, and aligned split hours. */
+.partner-detail-back,
+.partner-detail-copy > .eyebrow,
+.partner-location-card dt,
+.partner-location-card dd {
+  font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+}
+.partner-detail-back { font-weight: 500; letter-spacing: .05em; }
+.partner-detail-copy > .eyebrow { font-weight: 500; letter-spacing: .06em; }
+.partner-detail-copy h1.partner-detail-title-zh {
+  font-family: "LXGW WenKai TC", "PingFang SC", serif;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.partner-location-card h2 .partner-location-name-zh {
+  font-family: "LXGW WenKai TC", "PingFang SC", serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+.partner-location-card dt { font-weight: 400; }
+.partner-location-card dd {
+  font-weight: 400;
+  line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+.partner-hours-split {
+  display: inline-grid;
+  width: fit-content;
+  max-width: 100%;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 16px;
+}
+.partner-hours-note { white-space: nowrap; }
+.partner-location-card dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+@media (max-width: 580px) {
+  .partner-carousel.is-filtered .partner-item { min-height: 154px; padding: 6px 7px 8px; gap: 3px; }
+  .partner-carousel.is-filtered .partner-item img { flex-basis: 104px; height: 104px; max-height: 104px; padding: 8px; }
+  .partner-carousel.is-filtered .partner-name-caption { font-size: 15.5px; }
+  .partner-carousel.is-filtered .partner-name-caption:lang(zh) { font-size: 16px; }
+  .partner-hours-split { column-gap: 9px; }
+  .partner-hours-note { font-size: .9em; }
+}
+

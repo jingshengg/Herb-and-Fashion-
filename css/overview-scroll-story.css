@@ -929,7 +929,7 @@ html[lang^="zh"] .services-preview .service-item h3 {
 
 /* Bring the following section's content into view as soon as the pinned story ends. */
 html.overview-scroll-story-ready .overview-products-services-story + .contact-preview {
-  padding-top: clamp(40px, 5vh, 64px);
+  padding-top: clamp(52px, 6dvh, 76px);
 }
 
 /* The pinned curtain and card sequence use the same viewport composition at all widths. */
@@ -1298,4 +1298,15 @@ html.overview-scroll-story-ready-stacked .services-learn-more {
   html.overview-scroll-story-ready-stacked .service-type-char {
     will-change: auto;
   }
+}
+
+/* Slightly enlarge the Chinese CTA only; preserve the English sizing. */
+html[lang^="zh"] .services-preview .services-learn-more { font-size: .82rem; }
+
+@media (max-width: 760px) {
+  html[lang^="zh"] .services-preview .services-learn-more { font-size: .67rem; }
+}
+
+@media (max-width: 420px) {
+  html[lang^="zh"] .services-preview .services-learn-more { font-size: .62rem; }
 }

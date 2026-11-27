@@ -1,0 +1,115 @@
+/* English-only typography for About Us; the Chinese language stylesheet remains authoritative. */
+html[data-language="en"] body.about-page {
+  --about-english-heading-size: clamp(2.2rem, 4.1vw, 3.55rem);
+}
+
+html[data-language="en"] body.about-page .about-story .story-paragraph {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+html[data-language="en"] body.about-page .about-story .company-name-highlight {
+  font-weight: 600;
+}
+
+html[data-language="en"] body.about-page .about-storybook h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: var(--about-english-heading-size);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.08;
+}
+
+html[data-language="en"] body.about-page .about-storybook-intro > span[lang="en"] {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+html[data-language="en"] body.about-page .about-storybook-intro > span[lang="en"] em {
+  font-family: inherit;
+  font-style: italic;
+}
+
+html[data-language="en"] body.about-page .about-storybook-highlights li > span > strong[lang="en"] {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+html[data-language="en"] body.about-page .about-storybook-highlights li > span > span[lang="en"] {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+html[data-language="en"] body.about-page .about-storybook-cta {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+html[data-language="en"] body.about-page .about-purpose .about-section-heading > .eyebrow {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+}
+
+html[data-language="en"] body.about-page .about-purpose .about-section-heading h2,
+html[data-language="en"] body.about-page .about-footprint .about-section-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: var(--about-english-heading-size);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.08;
+}
+
+html[data-language="en"] body.about-page .about-footprint .about-section-heading h2 {
+  font-size: calc(var(--about-english-heading-size) + 2px);
+}
+
+html[data-language="en"] body.about-page .purpose-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+html[data-language="en"] body.about-page .purpose-card p {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+html[data-language="en"] body.about-page .footprint-heading > p:last-child {
+  font-family: "Plus Jakarta Sans", "Noto Serif SC", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Preserve the site-wide ampersand rule outside the English About Us text. */
+html[data-language="en"] body.about-page .about-story .story-paragraph :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.about-page .about-storybook-intro > span[lang="en"] :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.about-page .about-storybook-highlights li > span > span[lang="en"] :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.about-page .purpose-card p :is(.ampersand-times, .plain-amp) {
+  font-family: "Noto Serif SC", serif !important;
+  font-weight: 500;
+  letter-spacing: inherit;
+  font-style: normal;
+}
+
+html[data-language="en"] body.about-page .about-storybook-highlights li > strong[lang="en"] :is(.ampersand-times, .plain-amp),
+html[data-language="en"] body.about-page .about-storybook-highlights li > span > strong[lang="en"] :is(.ampersand-times, .plain-amp) {
+  font-family: "Noto Serif SC", serif !important;
+  font-weight: 600;
+  letter-spacing: inherit;
+  font-style: normal;
+}
